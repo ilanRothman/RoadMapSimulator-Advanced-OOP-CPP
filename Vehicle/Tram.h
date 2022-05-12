@@ -7,6 +7,9 @@ class Tram : public Vehicle{
 public:
     Tram(int st = 2): Vehicle(st){};
 
+    virtual ~Tram() {
+    }
+
 };
 
 

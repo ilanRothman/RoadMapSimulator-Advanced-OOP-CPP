@@ -10,6 +10,8 @@ private:
 public:
     Sprinter(int st = 3): Vehicle(st){}
 
+    virtual ~Sprinter() {
+    }
 };
 
 

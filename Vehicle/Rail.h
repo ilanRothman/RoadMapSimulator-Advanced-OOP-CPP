@@ -7,6 +7,9 @@
 class Rail: public Vehicle{
     public:
         Rail(int st = 5): Vehicle(st){};
+
+    virtual ~Rail() {
+    }
 };
 
 

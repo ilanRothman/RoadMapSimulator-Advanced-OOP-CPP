@@ -4,16 +4,19 @@
 
 #include <vector>
 #include "../Junction/Junction.h"
-    using namespace std;
+#include "map"
+#include "memory"
+
+using namespace std;
 
 
 class Vehicle {
     private:
-        int stopTime;
-        vector< pair <Junction*, vector< pair< Junction*, int> > > > graph;
+    int stopTime;
+    map <Junction* , vector < pair < Junction* ,int> > > graph;
+
     public:
         Vehicle(int st) : stopTime(st) {};
-        virtual ~Vehicle() = 0; // abstract
 
         //getters and setters.
 

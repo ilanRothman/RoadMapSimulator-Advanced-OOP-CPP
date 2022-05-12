@@ -1,4 +1,4 @@
-C:\Users\Paz_m\AppData\Local\JetBrains\CLion2021.2\cygwin_cmake\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug -DCMAKE_DEPENDS_USE_COMPILER=FALSE -G "CodeBlocks - Unix Makefiles" /cygdrive/c/Users/Paz_m/CLionProjects/Assignment_Two
+C:\Users\iroth\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.6461.46\bin\cmake\win\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=C:/Users/iroth/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6461.46/bin/ninja/win/ninja.exe -G Ninja C:\Users\iroth\CLionProjects\RoadMapSimulator
 -- Configuring done
 -- Generating done
--- Build files have been written to: /cygdrive/c/Users/Paz_m/CLionProjects/Assignment_Two/cmake-build-debug
+-- Build files have been written to: C:/Users/iroth/CLionProjects/RoadMapSimulator/cmake-build-debug

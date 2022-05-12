@@ -8,7 +8,6 @@
 #include "Vehicle/Rail.h"
 #include "Vehicle/Sprinter.h"
 #include "Vehicle/Tram.h"
-#include "Junction/Junction.h"
 #include "iostream"
 #include "Junction/interCity.h"
 #include "Junction/Central.h"
