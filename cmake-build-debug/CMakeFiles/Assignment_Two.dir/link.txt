@@ -1,0 +1,1 @@
+/usr/bin/c++.exe -g -Wl,--enable-auto-import CMakeFiles/Assignment_Two.dir/main.cpp.o -o Assignment_Two.exe -Wl,--out-implib,libAssignment_Two.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
