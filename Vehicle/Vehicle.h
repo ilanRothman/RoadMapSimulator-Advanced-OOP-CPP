@@ -13,7 +13,7 @@ using namespace std;
 class Vehicle {
     private:
     int stopTime;
-    map <Junction* , vector < pair < Junction* ,int> > > graph;
+    map <shared_ptr<Junction> , vector < pair < shared_ptr<Junction> ,int> > > graph;
 
     public:
         Vehicle(int st) : stopTime(st) {};
@@ -23,6 +23,11 @@ class Vehicle {
         int getStopTime() const { return stopTime;}
 
         void setStopTime(int st){stopTime=st;}
+
+        void addEdge(shared_ptr<Junction>const& source, shared_ptr<Junction>const& target, int duration);
+
+        void printMap();
+
 };
 
 #endif //EX2_VEHICLE_H

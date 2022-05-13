@@ -18,7 +18,10 @@ struct FileError:public exception{
 
 FileMgr::FileMgr(int argc, char **argv) {
     files.insert(files.end(), argv, argv + argc);
+    checkArgs();
 }
+
+
 
 string FileMgr::getConfig() {
     for(auto iter = files.begin(); iter != files.end(); iter++){
@@ -45,7 +48,7 @@ void FileMgr::LoadFile(string &filePath, string &source, string &target, string 
     istringstream ss(line);
     ss >> source >> target >> duration;
     if(ss.rdbuf()->in_avail()){
-        throw FileError("Too many arguments\n");
+        throw FileError("Too many arguments.\n");
     }
     checkJunc(filePath,source,target,duration);
 }
@@ -62,14 +65,14 @@ void FileMgr::checkJunc(string &option, string &source, string &target, string &
 
     try{
         if (source.length() > 32 or target.length() > 32 or stoi(duration) < 0)
-            throw FileError("Invalid File Arguments");
+            throw FileError("Invalid File Arguments.");
 
         switch (option[0])
         {
             case 'b':
             {
                 if(option.rfind("bus", 0) != 0)
-                    throw FileError("Invalid File Arguments");;
+                    throw FileError("Invalid File Arguments.");
                 break;
             }
             case 't':

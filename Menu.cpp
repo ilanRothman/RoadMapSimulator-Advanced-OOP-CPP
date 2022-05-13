@@ -1,30 +1,27 @@
-//
-// Created by iroth on 5/11/2022.
-//
-
-#include <fstream>
-#include <sstream>
 #include "Menu.h"
 
+//constructor.
 Menu::Menu(int argc, char **argv): files(argc,argv), bus(), rail(), sprinter(),
 tram(), generalMap(), commands(),stationTimes() {
     config();
     mapInit();
 }
 
+//separating the menu option and the command.
 void getCommand(string& command, string& option)
 {
     option = command.substr(0,command.find(' '));
     command = command.substr(command.find(' ') + 1,command.length());
 }
 
+//main menu of program.
 void Menu::startMenu() {
     string command,option,source,target,duration;
-
-    while(true)
+    bool onGoing = true;
+    while(onGoing)
     {
         cout << "Please choose an option\n";
-        cout << "Menu\n";
+        cout << "Menu:\n";
         cout << "load - Load an edge\n"; // adds edge - 1 -
         cout << "outbound -  Print available targets from source\n"; // bfs from source to targets - 2 -
         cout << "inbound -  Print available sources from target\n"; // other way around bfs - 3 -
@@ -33,9 +30,8 @@ void Menu::startMenu() {
         cout << "EXIT - Exits the program\n"; // - 6 -
 
 
-        cin >> command;
-        getCommand(command, option, source, target);
-
+        getline(cin,command);
+        getCommand(command, option);
 
         switch (commands.at(option)) {
             case 1:
@@ -59,7 +55,7 @@ void Menu::startMenu() {
     }
 
 }
-
+//setting default values according to config file.
 void Menu::config() {
     int duration;
     string line, object, cPath;
@@ -96,7 +92,10 @@ void Menu::config() {
     }
 
 }
+
+//menu keys for the menu switch case and junction transit times.
 void Menu::mapInit() {
+
   commands.insert({"load",1});
   commands.insert({"outbound",2});
   commands.insert({"inbound",3});
@@ -104,38 +103,45 @@ void Menu::mapInit() {
   commands.insert({"multiExpress",5});
   commands.insert({"print",6});
   commands.insert({"Exit",7});
+
+  stationTimes.insert({"IC",15});
+  stationTimes.insert({"CS",10});
+  stationTimes.insert({"ST",5});
 }
 
+//adding an edge to the vehicle map and the general map.
 void Menu::addEdge(string& option, string& source, string& target , string& duration) {
     auto src = createJunc(source);
     auto trg = createJunc(target);
-
+    int dur = stoi(duration);
 
     switch (option[0])
     {
         case 'b':
         {
-            bus.addEdge(src,trg,duration);
+            bus.addEdge(src,trg,dur);
             break;
         }
         case 's':
         {
-            sprinter.addEdge();
+            sprinter.addEdge(src,trg,dur);
             break;
         }
         case 't':
         {
-            tram.addEdge();
+            tram.addEdge(src,trg,dur);
             break;
         }
         case 'r':
         {
-            rail.addEdge();
+            rail.addEdge(src,trg,dur);
             break;
         }
     }
+    generalMap.addEdge(src,trg, dur);
 }
 
+//checking what type of junction and creating it accordingly.
 shared_ptr<Junction> Menu::createJunc(string &name) {
     if(name.rfind("IC",0) == 0)
         return make_shared<Junction>(name,stationTimes.at("IC"));
