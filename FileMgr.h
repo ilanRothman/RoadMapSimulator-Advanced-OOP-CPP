@@ -11,7 +11,9 @@ class FileMgr{
     public:
     FileMgr(int argc , char** argv);
 
+    void checkJunc(string& option,string& source,string& target,string& duration);
     void LoadFile(string& option,string& source,string& target,string& duration);
+    void checkArgs();
     string getConfig();
 };
 

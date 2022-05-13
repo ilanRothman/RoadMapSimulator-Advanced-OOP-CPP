@@ -77,20 +77,20 @@ void FileMgr::checkJunc(string &option, string &source, string &target, string &
             }
             case 't':
             {
-                if(option.rfind("tram",0) == 0)
-                    throw FileError("Invalid File Arguments");;
+                if(option.rfind("tram",0) != 0)
+                    throw FileError("Invalid File Arguments.");
                 break;
             }
             case 's':
             {
-                if(option.rfind("sprinter",0) == 0)
-                    throw FileError("Invalid File Arguments");;
+                if(option.rfind("sprinter",0) != 0)
+                    throw FileError("Invalid File Arguments.");
                 break;
             }
             case 'r':
             {
-                if(option.rfind("rail",0) == 0)
-                    throw FileError("Invalid File Arguments");;
+                if(option.rfind("rail",0) != 0)
+                    throw FileError("Invalid File Arguments.");
                 break;
             }
         }

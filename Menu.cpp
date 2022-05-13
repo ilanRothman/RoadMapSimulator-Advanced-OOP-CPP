@@ -37,6 +37,7 @@ void Menu::startMenu() {
             case 1:
                 files.LoadFile(command, source, target, duration);
                 addEdge(command,source,target,duration);
+                cout << "update was successful.";
                 break;
             case 2:
                 break;
@@ -47,9 +48,9 @@ void Menu::startMenu() {
             case 5:
                 break;
             case 6:
+                onGoing = false;
                 break;
             default:
-                onGoing = false;
                 break;
         }
     }
