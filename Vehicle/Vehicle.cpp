@@ -26,9 +26,5 @@ void Vehicle::addEdge(shared_ptr<Junction>const& source,shared_ptr<Junction>cons
     graph.insert({source,v});
 }
 
-void Vehicle::printMap() {
-    for
-
-    
-
+void Vehicle::printMap(){
 }

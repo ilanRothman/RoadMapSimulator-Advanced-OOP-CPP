@@ -1,4 +1,4 @@
 ToolSet: w64 6.0 (local)@C:\Program Files\mingw-w64\x86_64-8.1.0-posix-seh-rt_v6-rev0\mingw64
 Options: 
 
-Options:-DCMAKE_MAKE_PROGRAM=C:/Users/iroth/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6461.46/bin/ninja/win/ninja.exe
+Options:-DCMAKE_MAKE_PROGRAM=C:/Users/iroth/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/221.5591.52/bin/ninja/win/ninja.exe
