@@ -6,7 +6,8 @@
 #include "../Junction/Junction.h"
 #include "map"
 #include "memory"
-
+#include "iostream"
+#include "list"
 using namespace std;
 
 
@@ -26,7 +27,11 @@ class Vehicle {
 
         void addEdge(shared_ptr<Junction>const& source, shared_ptr<Junction>const& target, int duration);
 
-        void printMap();
+        void printMap() const;
+
+        void BFS(string const&  juncName) const;
+
+        shared_ptr<Junction> getSource(string const& source) const;
 
 };
 

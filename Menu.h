@@ -34,6 +34,8 @@ class Menu{
         void mapInit(); //menu keys for the menu switch case and junction transit times.
         void addEdge(string& option,string& source,string& target,string& duration); //adding an edge to the vehicle map and the general map.
         shared_ptr<Junction> createJunc(string& name); //separating the menu option and the command.
+        void print() const;
+        void outBound(const string& source) const;
 
 };
 

@@ -57,10 +57,10 @@ RM = /cygdrive/c/Users/Paz_m/AppData/Local/JetBrains/CLion2021.2/cygwin_cmake/bi
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /cygdrive/c/Users/Paz_m/CLionProjects/Assignment_Two
+CMAKE_SOURCE_DIR = /cygdrive/c/Users/Paz_m/CLionProjects/RoadMapSimulator
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /cygdrive/c/Users/Paz_m/CLionProjects/Assignment_Two/cmake-build-debug
+CMAKE_BINARY_DIR = /cygdrive/c/Users/Paz_m/CLionProjects/RoadMapSimulator/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /cygdrive/c/Users/Paz_m/CLionProjects/Assignment_Two/cmake-build-debug/CMakeFiles /cygdrive/c/Users/Paz_m/CLionProjects/Assignment_Two/cmake-build-debug//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /cygdrive/c/Users/Paz_m/CLionProjects/RoadMapSimulator/cmake-build-debug/CMakeFiles /cygdrive/c/Users/Paz_m/CLionProjects/RoadMapSimulator/cmake-build-debug//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /cygdrive/c/Users/Paz_m/CLionProjects/Assignment_Two/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /cygdrive/c/Users/Paz_m/CLionProjects/RoadMapSimulator/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -153,30 +153,6 @@ FileMgr.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/EX2.dir/build.make CMakeFiles/EX2.dir/FileMgr.cpp.s
 .PHONY : FileMgr.cpp.s
 
-Junction/Central.o: Junction/Central.cpp.o
-.PHONY : Junction/Central.o
-
-# target to build an object file
-Junction/Central.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/EX2.dir/build.make CMakeFiles/EX2.dir/Junction/Central.cpp.o
-.PHONY : Junction/Central.cpp.o
-
-Junction/Central.i: Junction/Central.cpp.i
-.PHONY : Junction/Central.i
-
-# target to preprocess a source file
-Junction/Central.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/EX2.dir/build.make CMakeFiles/EX2.dir/Junction/Central.cpp.i
-.PHONY : Junction/Central.cpp.i
-
-Junction/Central.s: Junction/Central.cpp.s
-.PHONY : Junction/Central.s
-
-# target to generate assembly for a file
-Junction/Central.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/EX2.dir/build.make CMakeFiles/EX2.dir/Junction/Central.cpp.s
-.PHONY : Junction/Central.cpp.s
-
 Junction/Junction.o: Junction/Junction.cpp.o
 .PHONY : Junction/Junction.o
 
@@ -200,54 +176,6 @@ Junction/Junction.s: Junction/Junction.cpp.s
 Junction/Junction.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/EX2.dir/build.make CMakeFiles/EX2.dir/Junction/Junction.cpp.s
 .PHONY : Junction/Junction.cpp.s
-
-Junction/Stad.o: Junction/Stad.cpp.o
-.PHONY : Junction/Stad.o
-
-# target to build an object file
-Junction/Stad.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/EX2.dir/build.make CMakeFiles/EX2.dir/Junction/Stad.cpp.o
-.PHONY : Junction/Stad.cpp.o
-
-Junction/Stad.i: Junction/Stad.cpp.i
-.PHONY : Junction/Stad.i
-
-# target to preprocess a source file
-Junction/Stad.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/EX2.dir/build.make CMakeFiles/EX2.dir/Junction/Stad.cpp.i
-.PHONY : Junction/Stad.cpp.i
-
-Junction/Stad.s: Junction/Stad.cpp.s
-.PHONY : Junction/Stad.s
-
-# target to generate assembly for a file
-Junction/Stad.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/EX2.dir/build.make CMakeFiles/EX2.dir/Junction/Stad.cpp.s
-.PHONY : Junction/Stad.cpp.s
-
-Junction/interCity.o: Junction/interCity.cpp.o
-.PHONY : Junction/interCity.o
-
-# target to build an object file
-Junction/interCity.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/EX2.dir/build.make CMakeFiles/EX2.dir/Junction/interCity.cpp.o
-.PHONY : Junction/interCity.cpp.o
-
-Junction/interCity.i: Junction/interCity.cpp.i
-.PHONY : Junction/interCity.i
-
-# target to preprocess a source file
-Junction/interCity.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/EX2.dir/build.make CMakeFiles/EX2.dir/Junction/interCity.cpp.i
-.PHONY : Junction/interCity.cpp.i
-
-Junction/interCity.s: Junction/interCity.cpp.s
-.PHONY : Junction/interCity.s
-
-# target to generate assembly for a file
-Junction/interCity.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/EX2.dir/build.make CMakeFiles/EX2.dir/Junction/interCity.cpp.s
-.PHONY : Junction/interCity.cpp.s
 
 Menu.o: Menu.cpp.o
 .PHONY : Menu.o
@@ -453,18 +381,9 @@ help:
 	@echo "... FileMgr.o"
 	@echo "... FileMgr.i"
 	@echo "... FileMgr.s"
-	@echo "... Junction/Central.o"
-	@echo "... Junction/Central.i"
-	@echo "... Junction/Central.s"
 	@echo "... Junction/Junction.o"
 	@echo "... Junction/Junction.i"
 	@echo "... Junction/Junction.s"
-	@echo "... Junction/Stad.o"
-	@echo "... Junction/Stad.i"
-	@echo "... Junction/Stad.s"
-	@echo "... Junction/interCity.o"
-	@echo "... Junction/interCity.i"
-	@echo "... Junction/interCity.s"
 	@echo "... Menu.o"
 	@echo "... Menu.i"
 	@echo "... Menu.s"

@@ -6,7 +6,6 @@
 			[
 				{
 					"build" : ".",
-					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.20"
@@ -39,7 +38,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "EX2::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-EX2-Debug-1f64768571e7c645ca18.json",
+					"jsonFile" : "target-EX2-Debug-169b369c23ff94ae5af5.json",
 					"name" : "EX2",
 					"projectIndex" : 0
 				}
@@ -49,12 +48,12 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "C:/Users/iroth/CLionProjects/RoadMapSimulator/cmake-build-debug",
-		"source" : "C:/Users/iroth/CLionProjects/RoadMapSimulator"
+		"build" : "/cygdrive/c/Users/Paz_m/CLionProjects/RoadMapSimulator/cmake-build-debug",
+		"source" : "/cygdrive/c/Users/Paz_m/CLionProjects/RoadMapSimulator"
 	},
 	"version" : 
 	{
 		"major" : 2,
-		"minor" : 3
+		"minor" : 2
 	}
 }

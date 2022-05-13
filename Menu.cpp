@@ -20,14 +20,14 @@ void Menu::startMenu() {
     bool onGoing = true;
     while(onGoing)
     {
-        cout << "Please choose an option\n";
+        cout << "\nPlease choose an option\n";
         cout << "Menu:\n";
         cout << "load - Load an edge\n"; // adds edge - 1 -
         cout << "outbound -  Print available targets from source\n"; // bfs from source to targets - 2 -
         cout << "inbound -  Print available sources from target\n"; // other way around bfs - 3 -
         cout << "uniExpress - Shortest time between target and source\n"; // dijaskra from target to source for each V - 4 -
         cout << "multiExpress - shortest time between target and source using ALL transport\n"; // dijaskra on 5th map - 5 -
-        cout << "EXIT - Exits the program\n"; // - 6 -
+        cout << "EXIT - Exits the program\n\n"; // - 6 -
 
 
         getline(cin,command);
@@ -37,9 +37,10 @@ void Menu::startMenu() {
             case 1:
                 files.LoadFile(command, source, target, duration);
                 addEdge(command,source,target,duration);
-                cout << "update was successful.";
+                cout << "\nupdate was successful." << endl;
                 break;
             case 2:
+                outBound(command);
                 break;
             case 3:
                 break;
@@ -48,14 +49,30 @@ void Menu::startMenu() {
             case 5:
                 break;
             case 6:
-                onGoing = false;
+                print();
                 break;
             default:
-                break;
+              onGoing = false;
+              break;
         }
     }
 
 }
+
+void Menu::print() const
+{
+  cout << "Bus:" << endl;
+  bus.printMap();
+  cout<< "\n\nSprinter: " <<endl;
+  sprinter.printMap();
+  cout<< "\n\nTram: " << endl;
+  tram.printMap();
+  cout<< "\n\nRail: " << endl;
+  rail.printMap();
+  cout<<"\n\nGeneralMap: " <<endl;
+  generalMap.printMap();
+}
+
 //setting default values according to config file.
 void Menu::config() {
     int duration;
@@ -149,6 +166,16 @@ shared_ptr<Junction> Menu::createJunc(string &name) {
     if(name.rfind("CS",0) == 0)
         return make_shared<Junction>(name,stationTimes.at("CS"));
     return make_shared<Junction>(name,stationTimes.at("ST"));
+}
+void Menu::outBound(const string &source) const {
+  cout<< "bus: ";
+  bus.BFS(source);
+  cout << "rail: ";
+  rail.BFS(source);
+  cout << "tram: ";
+  tram.BFS(source);
+  cout << "sprinter: ";
+  sprinter.BFS(source);
 }
 
 

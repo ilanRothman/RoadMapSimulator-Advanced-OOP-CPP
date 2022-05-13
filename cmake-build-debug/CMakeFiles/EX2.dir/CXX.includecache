@@ -1,0 +1,42 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/cygdrive/c/Users/Paz_m/CLionProjects/RoadMapSimulator/Junction/Junction.h
+string
+-
+
+/cygdrive/c/Users/Paz_m/CLionProjects/RoadMapSimulator/RoadMap.cpp
+RoadMap.h
+/cygdrive/c/Users/Paz_m/CLionProjects/RoadMapSimulator/RoadMap.h
+
+/cygdrive/c/Users/Paz_m/CLionProjects/RoadMapSimulator/RoadMap.h
+Junction/Junction.h
+/cygdrive/c/Users/Paz_m/CLionProjects/RoadMapSimulator/Junction/Junction.h
+Vehicle/Vehicle.h
+/cygdrive/c/Users/Paz_m/CLionProjects/RoadMapSimulator/Vehicle/Vehicle.h
+map
+/cygdrive/c/Users/Paz_m/CLionProjects/RoadMapSimulator/map
+
+/cygdrive/c/Users/Paz_m/CLionProjects/RoadMapSimulator/Vehicle/Vehicle.cpp
+Vehicle.h
+/cygdrive/c/Users/Paz_m/CLionProjects/RoadMapSimulator/Vehicle/Vehicle.h
+
+/cygdrive/c/Users/Paz_m/CLionProjects/RoadMapSimulator/Vehicle/Vehicle.h
+vector
+-
+../Junction/Junction.h
+/cygdrive/c/Users/Paz_m/CLionProjects/RoadMapSimulator/Junction/Junction.h
+map
+/cygdrive/c/Users/Paz_m/CLionProjects/RoadMapSimulator/Vehicle/map
+memory
+/cygdrive/c/Users/Paz_m/CLionProjects/RoadMapSimulator/Vehicle/memory
+iostream
+/cygdrive/c/Users/Paz_m/CLionProjects/RoadMapSimulator/Vehicle/iostream
+list
+/cygdrive/c/Users/Paz_m/CLionProjects/RoadMapSimulator/Vehicle/list
+

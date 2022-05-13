@@ -29,5 +29,60 @@ void Vehicle::addEdge(shared_ptr<Junction>const& source,shared_ptr<Junction>cons
 
 }
 
-void Vehicle::printMap(){
+void Vehicle::printMap() const{
+  for( const auto& source : graph )
+  {
+    cout << "[ " << source.first->getName() << " ]";
+
+    for ( const auto& secondPair : source.second)
+      cout << " -> [ " << secondPair.first->getName()  << " : "  << secondPair.second << " ] ";
+
+    cout << endl;
+  }
 }
+
+
+
+void Vehicle::BFS(const string &juncName) const{
+
+  shared_ptr<Junction> src = getSource(juncName);
+
+  if(!src) {
+    cerr << juncName << " does not exist in the current network. \n";
+    return;
+  }
+
+  map< string,bool > visited;
+  list< shared_ptr<Junction> > queue;
+
+  for ( const auto& i: graph ){
+    visited.insert({i.first->getName(), false});}
+
+  visited.at(juncName) = true;
+  queue.push_back(src);
+  while(!queue.empty()){
+
+    src = queue.front();
+    queue.pop_front();
+
+    for(const auto& adj: graph.at(src))
+    {
+      if(visited.at(adj.first->getName())){
+        continue;
+      }
+
+      cout << adj.first->getName() << "\t";
+      visited.at(adj.first->getName()) = true;
+      queue.push_back(adj.first);
+    }
+  }
+}
+
+shared_ptr<Junction> Vehicle::getSource(const string &source) const{
+  for( const auto& i : graph )
+    if( i.first->getName() == source )
+      return i.first;
+  return nullptr;
+}
+
+

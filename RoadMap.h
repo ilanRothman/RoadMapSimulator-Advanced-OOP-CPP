@@ -13,6 +13,7 @@ private:
 
 public:
     void addEdge(shared_ptr<Junction> const &source,shared_ptr<Junction>const & target, int duration);
+    void printMap() const;
 };
 
 #endif //EX2_ROADMAP_H
