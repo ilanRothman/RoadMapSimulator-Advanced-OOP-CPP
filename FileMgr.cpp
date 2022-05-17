@@ -12,13 +12,18 @@ struct FileError:public exception{
   explicit FileError(const string& err)
   {
     std::cerr << err;
+#ifndef TEST
     exit(1);
+#endif
   }
 };
 
 FileMgr::FileMgr(int argc, char **argv) {
     files.insert(files.end(), argv, argv + argc);
     checkArgs();
+#ifdef TEST
+    files.erase(files.begin());
+#endif
 }
 
 
@@ -38,17 +43,17 @@ void FileMgr::LoadFile(string &filePath, string &source, string &target, string 
         auto val =  find(files.begin(),files.end(),filePath);
         if(val == files.end())
             throw FileError("ERROR opening the specified file\n");
-      }
+
+        ifstream file(filePath);
+        getline(file,line);
+        istringstream ss(line);
+        ss >> source >> target >> duration;
+        if(ss.rdbuf()->in_avail()){
+            throw FileError("Too many arguments.\n");
+          }
+        }
     catch (FileError&) {
         return;
-      }
-
-    ifstream file(filePath);
-    getline(file,line);
-    istringstream ss(line);
-    ss >> source >> target >> duration;
-    if(ss.rdbuf()->in_avail()){
-        throw FileError("Too many arguments.\n");
     }
     checkJunc(filePath,source,target,duration);
 }
@@ -96,6 +101,22 @@ void FileMgr::checkJunc(string &option, string &source, string &target, string &
         }
     }
 
-    catch(FileError& ){}
+    catch(FileError& ){
+#ifdef TEST
+      return;
+#endif
+    }
+    catch (invalid_argument&) {
+#ifdef TEST
+      return;
+#endif
+
+    }
 }
+
+#ifdef TEST
+vector<string>& FileMgr::loadAll() {
+  return files;
+}
+#endif
 

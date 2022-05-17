@@ -85,4 +85,48 @@ shared_ptr<Junction> Vehicle::getSource(const string &source) const{
   return nullptr;
 }
 
+void Vehicle::DFS(const string &source,const string &target, map<string, bool> &visited, bool &toPrint) {
+  if( source == target )
+  {
+    toPrint = true;
+    return;
+  }
+  visited.at(source) = true;
+  for ( const auto& i : graph.at(getSource(source)) )
+  {
+    if( !visited.at(i.first->getName()) )
+    {
+      DFS(i.first->getName(),target,visited,toPrint);
+      if( toPrint ) {
+        cout << "[ " <<  source << " ]";
+//        return;
+      }
+    }
+  }
+}
+void Vehicle::dfsHelper(const string& target){
+  map<string,bool> visited;
+  bool toPrint = false;
+  bool printed = false;
+
+  for(const auto& i: graph)
+    visited.insert({i.first->getName(),false});
+
+  for(const auto& i: visited)
+  {
+    if( !i.second )
+    {
+      DFS(i.first,target,visited,toPrint);
+    }
+    if( toPrint )
+      printed = true;
+
+    toPrint = false;
+  }
+
+  if(!printed)
+    cout << "NO ROADS AT ALL";
+
+}
+
 

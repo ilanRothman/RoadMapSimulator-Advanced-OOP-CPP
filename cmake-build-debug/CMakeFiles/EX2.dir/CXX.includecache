@@ -6,13 +6,43 @@
 
 #IncludeRegexTransform: 
 
+/cygdrive/c/Users/Paz_m/CLionProjects/RoadMapSimulator/FileMgr.h
+string
+-
+vector
+-
+
 /cygdrive/c/Users/Paz_m/CLionProjects/RoadMapSimulator/Junction/Junction.h
 string
 -
 
-/cygdrive/c/Users/Paz_m/CLionProjects/RoadMapSimulator/RoadMap.cpp
+/cygdrive/c/Users/Paz_m/CLionProjects/RoadMapSimulator/Menu.cpp
+Menu.h
+/cygdrive/c/Users/Paz_m/CLionProjects/RoadMapSimulator/Menu.h
+
+/cygdrive/c/Users/Paz_m/CLionProjects/RoadMapSimulator/Menu.h
+FileMgr.h
+/cygdrive/c/Users/Paz_m/CLionProjects/RoadMapSimulator/FileMgr.h
 RoadMap.h
 /cygdrive/c/Users/Paz_m/CLionProjects/RoadMapSimulator/RoadMap.h
+Vehicle/Bus.h
+/cygdrive/c/Users/Paz_m/CLionProjects/RoadMapSimulator/Vehicle/Bus.h
+Vehicle/Rail.h
+/cygdrive/c/Users/Paz_m/CLionProjects/RoadMapSimulator/Vehicle/Rail.h
+Vehicle/Sprinter.h
+/cygdrive/c/Users/Paz_m/CLionProjects/RoadMapSimulator/Vehicle/Sprinter.h
+Vehicle/Tram.h
+/cygdrive/c/Users/Paz_m/CLionProjects/RoadMapSimulator/Vehicle/Tram.h
+iostream
+/cygdrive/c/Users/Paz_m/CLionProjects/RoadMapSimulator/iostream
+map
+/cygdrive/c/Users/Paz_m/CLionProjects/RoadMapSimulator/map
+fstream
+-
+sstream
+-
+memory
+/cygdrive/c/Users/Paz_m/CLionProjects/RoadMapSimulator/memory
 
 /cygdrive/c/Users/Paz_m/CLionProjects/RoadMapSimulator/RoadMap.h
 Junction/Junction.h
@@ -22,7 +52,21 @@ Vehicle/Vehicle.h
 map
 /cygdrive/c/Users/Paz_m/CLionProjects/RoadMapSimulator/map
 
-/cygdrive/c/Users/Paz_m/CLionProjects/RoadMapSimulator/Vehicle/Vehicle.cpp
+/cygdrive/c/Users/Paz_m/CLionProjects/RoadMapSimulator/Vehicle/Bus.h
+memory
+-
+Vehicle.h
+/cygdrive/c/Users/Paz_m/CLionProjects/RoadMapSimulator/Vehicle/Vehicle.h
+
+/cygdrive/c/Users/Paz_m/CLionProjects/RoadMapSimulator/Vehicle/Rail.h
+Vehicle.h
+/cygdrive/c/Users/Paz_m/CLionProjects/RoadMapSimulator/Vehicle/Vehicle.h
+
+/cygdrive/c/Users/Paz_m/CLionProjects/RoadMapSimulator/Vehicle/Sprinter.h
+Vehicle.h
+/cygdrive/c/Users/Paz_m/CLionProjects/RoadMapSimulator/Vehicle/Vehicle.h
+
+/cygdrive/c/Users/Paz_m/CLionProjects/RoadMapSimulator/Vehicle/Tram.h
 Vehicle.h
 /cygdrive/c/Users/Paz_m/CLionProjects/RoadMapSimulator/Vehicle/Vehicle.h
 

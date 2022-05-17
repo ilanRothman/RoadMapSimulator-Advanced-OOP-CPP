@@ -1,4 +1,5 @@
 #include "Menu.h"
+#define TEST
 
 //constructor.
 Menu::Menu(int argc, char **argv): files(argc,argv), bus(), rail(), sprinter(),
@@ -27,6 +28,10 @@ void Menu::startMenu() {
         cout << "inbound -  Print available sources from target\n"; // other way around bfs - 3 -
         cout << "uniExpress - Shortest time between target and source\n"; // dijaskra from target to source for each V - 4 -
         cout << "multiExpress - shortest time between target and source using ALL transport\n"; // dijaskra on 5th map - 5 -
+#ifdef TEST
+        cout << "TEST\n"; - 7;
+
+#endif
         cout << "EXIT - Exits the program\n\n"; // - 6 -
 
 
@@ -51,8 +56,23 @@ void Menu::startMenu() {
             case 6:
                 print();
                 break;
+            case 7:
+                onGoing = false;
+                break;
+#ifdef TEST
+            case 8:
+                for(auto i: files.loadAll())
+                {
+                  duration.clear();
+                  files.LoadFile(i,source,target,duration);
+                  if(duration.empty())
+                    continue;
+                  addEdge(i,source,target,duration);
+                }
+                break;
+#endif
             default:
-              onGoing = false;
+              cout << "unknown command";
               break;
         }
     }
@@ -121,6 +141,7 @@ void Menu::mapInit() {
   commands.insert({"multiExpress",5});
   commands.insert({"print",6});
   commands.insert({"Exit",7});
+  commands.insert({"TEST",8});
 
   stationTimes.insert({"IC",15});
   stationTimes.insert({"CS",10});

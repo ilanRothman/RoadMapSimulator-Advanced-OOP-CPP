@@ -1,6 +1,7 @@
 
 #ifndef EX2_FILEMGR_H
 #define EX2_FILEMGR_H
+#define TEST
 #include <string>
 #include <vector>
 using namespace std;
@@ -15,6 +16,10 @@ class FileMgr{
     void LoadFile(string& option,string& source,string& target,string& duration);
     void checkArgs();
     string getConfig();
+
+#ifdef TEST
+    vector<string>& loadAll();
+#endif
 };
 
 

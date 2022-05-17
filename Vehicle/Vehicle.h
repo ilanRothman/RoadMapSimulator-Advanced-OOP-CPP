@@ -33,6 +33,9 @@ class Vehicle {
 
         shared_ptr<Junction> getSource(string const& source) const;
 
+        void dfsHelper(const string& target);
+
+        void DFS(const string& source,const string& target, map<string,bool> & visited, bool& toPrint);
 };
 
 #endif //EX2_VEHICLE_H
