@@ -45,6 +45,7 @@ void Vehicle::printMap() const{
 void Vehicle::BFS(const string &juncName,const graphMap& gr) const{
 
   shared_ptr<Junction> src = getSource(juncName);
+  string name;
 
   if(!src) {
     cout << juncName << " does not exist in the current network. \n";
@@ -52,20 +53,20 @@ void Vehicle::BFS(const string &juncName,const graphMap& gr) const{
   }
 
   map< string,bool > visited;
-  list< shared_ptr<Junction> > queue;
+  list< string > queue;
 
   for ( const auto& i: gr ){
     visited.insert({i.first->getName(), false});
   }
 
   visited.at(juncName) = true;
-  queue.push_back(src);
+  queue.push_back(src->getName());
   while(!queue.empty()){
 
-    src = queue.front();
+    name = queue.front();
     queue.pop_front();
 
-    for(const auto& adj: gr.at(src))
+    for(const auto& adj: gr.at(getSource(name)))
     {
       if(visited.at(adj.first->getName())){
           continue;
@@ -73,7 +74,7 @@ void Vehicle::BFS(const string &juncName,const graphMap& gr) const{
 
       cout << adj.first->getName() << "\t";
       visited.at(adj.first->getName()) = true;
-      queue.push_back(adj.first);
+      queue.push_back(adj.first->getName());
     }
   }
 }
