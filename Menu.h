@@ -36,6 +36,7 @@ class Menu{
         shared_ptr<Junction> createJunc(string& name); //separating the menu option and the command.
         void print() const;
         void outBound(const string& source) const;
+        void inBound(const string& source) const;
 
 };
 

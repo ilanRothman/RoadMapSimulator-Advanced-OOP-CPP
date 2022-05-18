@@ -98,7 +98,7 @@ void Menu::config() {
     int duration;
     string line, object, cPath;
     cPath = this->files.getConfig();
-    if(cPath != ""){
+    if(!cPath.empty()){
         ifstream cFig(cPath);
         while(getline(cFig,line)){
             istringstream ss(line);
@@ -188,6 +188,7 @@ shared_ptr<Junction> Menu::createJunc(string &name) {
         return make_shared<Junction>(name,stationTimes.at("CS"));
     return make_shared<Junction>(name,stationTimes.at("ST"));
 }
+
 void Menu::outBound(const string &source) const {
   cout<< "bus: ";
   bus.BFS(source);
@@ -197,6 +198,9 @@ void Menu::outBound(const string &source) const {
   tram.BFS(source);
   cout << "sprinter: ";
   sprinter.BFS(source);
+}
+void Menu::inBound(const string &source) const {
+
 }
 
 

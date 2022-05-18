@@ -27,7 +27,6 @@ FileMgr::FileMgr(int argc, char **argv) {
 }
 
 
-
 string FileMgr::getConfig() {
     for(auto iter = files.begin(); iter != files.end(); iter++){
         if(*iter == "-c"){

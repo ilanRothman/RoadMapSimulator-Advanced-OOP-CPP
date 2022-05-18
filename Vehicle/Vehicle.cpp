@@ -1,5 +1,7 @@
 
 #include "Vehicle.h"
+
+typedef map<shared_ptr<Junction>, vector<pair<shared_ptr<Junction>, int> > > graphMap;
 using namespace std;
 
 void Vehicle::addEdge(shared_ptr<Junction>const& source,shared_ptr<Junction>const& target, int duration) {
@@ -40,8 +42,6 @@ void Vehicle::printMap() const{
     cout << endl;
   }
 }
-
-
 
 void Vehicle::BFS(const string &juncName) const{
 
@@ -104,6 +104,7 @@ void Vehicle::DFS(const string &source,const string &target, map<string, bool> &
     }
   }
 }
+
 void Vehicle::dfsHelper(const string& target){
   map<string,bool> visited;
   bool toPrint = false;
@@ -129,4 +130,16 @@ void Vehicle::dfsHelper(const string& target){
 
 }
 
+graphMap &Vehicle::turnedGraph() {
+  graphMap turned;
+  pair<shared_ptr<Junction>,int > p;
+  for(const auto& key:graph)
+  {
+    for(const auto& vec: key.second )
+    {
+
+    }
+  }
+  return <#initializer#>;
+}
 

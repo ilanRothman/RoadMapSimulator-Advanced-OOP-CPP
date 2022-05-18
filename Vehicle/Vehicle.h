@@ -36,6 +36,9 @@ class Vehicle {
         void dfsHelper(const string& target);
 
         void DFS(const string& source,const string& target, map<string,bool> & visited, bool& toPrint);
+
+        map <shared_ptr<Junction>, vector < pair < shared_ptr<Junction> ,int> > >& turnedGraph();
+
 };
 
 #endif //EX2_VEHICLE_H
