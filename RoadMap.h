@@ -10,18 +10,18 @@ using namespace std;
 class RoadMap{
     class Edge{
         private:
-            shared_ptr<Junction> const &source;
-            shared_ptr<Junction> const &dest;
+            const string& source;
+            const string &dest;
             int duration;
             string type;
         public:
-            Edge(const shared_ptr<Junction> &source, const shared_ptr<Junction> &dest, int duration, string type);
+            Edge(const string& source, const string& target, int duration, string type);
 
-            const shared_ptr<Junction> &getSource() const;
+        const string &getSource() const;
 
-            const shared_ptr<Junction> &getDest() const;
+        const string &getDest() const;
 
-            int getDuration() const;
+        int getDuration() const;
 
             void setDuration(int dur);
 
