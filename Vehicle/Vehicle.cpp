@@ -1,7 +1,6 @@
 
 #include "Vehicle.h"
 
-typedef map<shared_ptr<Junction>, vector<pair<shared_ptr<Junction>, int> > > graphMap;
 using namespace std;
 
 void Vehicle::addEdge(shared_ptr<Junction>const& source,shared_ptr<Junction>const& target, int duration) {
@@ -43,20 +42,21 @@ void Vehicle::printMap() const{
   }
 }
 
-void Vehicle::BFS(const string &juncName) const{
+void Vehicle::BFS(const string &juncName,const graphMap& gr) const{
 
   shared_ptr<Junction> src = getSource(juncName);
 
   if(!src) {
-    cerr << juncName << " does not exist in the current network. \n";
+    cout << juncName << " does not exist in the current network. \n";
     return;
   }
 
   map< string,bool > visited;
   list< shared_ptr<Junction> > queue;
 
-  for ( const auto& i: graph ){
-    visited.insert({i.first->getName(), false});}
+  for ( const auto& i: gr ){
+    visited.insert({i.first->getName(), false});
+  }
 
   visited.at(juncName) = true;
   queue.push_back(src);
@@ -65,10 +65,10 @@ void Vehicle::BFS(const string &juncName) const{
     src = queue.front();
     queue.pop_front();
 
-    for(const auto& adj: graph.at(src))
+    for(const auto& adj: gr.at(src))
     {
       if(visited.at(adj.first->getName())){
-        continue;
+          continue;
       }
 
       cout << adj.first->getName() << "\t";
@@ -85,61 +85,72 @@ shared_ptr<Junction> Vehicle::getSource(const string &source) const{
   return nullptr;
 }
 
-void Vehicle::DFS(const string &source,const string &target, map<string, bool> &visited, bool &toPrint) {
-  if( source == target )
-  {
-    toPrint = true;
-    return;
+//void Vehicle::DFS(const string &source,const string &target, map<string, bool> &visited, bool &toPrint) {
+//  if( source == target )
+//  {
+//    toPrint = true;
+//    return;
+//  }
+//  visited.at(source) = true;
+//  for ( const auto& i : graph.at(getSource(source)) )
+//  {
+//    if( !visited.at(i.first->getName()) )
+//    {
+//      DFS(i.first->getName(),target,visited,toPrint);
+//      if( toPrint ) {
+//        cout << "[ " <<  source << " ]";
+////        return;
+//      }
+//    }
+//  }
+//}
+//
+//void Vehicle::dfsHelper(const string& target){
+//  map<string,bool> visited;
+//  bool toPrint = false;
+//  bool printed = false;
+//
+//  for(const auto& i: graph)
+//    visited.insert({i.first->getName(),false});
+//
+//  for(const auto& i: visited)
+//  {
+//    if( !i.second )
+//    {
+//      DFS(i.first,target,visited,toPrint);
+//    }
+//    if( toPrint )
+//      printed = true;
+//
+//    toPrint = false;
+//  }
+//
+//  if(!printed)
+//    cout << "NO ROADS AT ALL";
+//
+//}
+
+void Vehicle::UpdateTurnedGraph() {
+  //creating all sources for turned graph.
+  for(const auto & key:graph){
+      vector<pair<shared_ptr<Junction>,int > >p; // vector val.
+      this->turnedGraph.insert(make_pair(key.first,p));
   }
-  visited.at(source) = true;
-  for ( const auto& i : graph.at(getSource(source)) )
-  {
-    if( !visited.at(i.first->getName()) )
-    {
-      DFS(i.first->getName(),target,visited,toPrint);
-      if( toPrint ) {
-        cout << "[ " <<  source << " ]";
-//        return;
-      }
-    }
-  }
-}
-
-void Vehicle::dfsHelper(const string& target){
-  map<string,bool> visited;
-  bool toPrint = false;
-  bool printed = false;
-
-  for(const auto& i: graph)
-    visited.insert({i.first->getName(),false});
-
-  for(const auto& i: visited)
-  {
-    if( !i.second )
-    {
-      DFS(i.first,target,visited,toPrint);
-    }
-    if( toPrint )
-      printed = true;
-
-    toPrint = false;
-  }
-
-  if(!printed)
-    cout << "NO ROADS AT ALL";
-
-}
-
-graphMap &Vehicle::turnedGraph() {
-  graphMap turned;
-  pair<shared_ptr<Junction>,int > p;
   for(const auto& key:graph)
   {
-    for(const auto& vec: key.second )
+      for(const auto& vec: key.second )
     {
-
+          pair<shared_ptr<Junction>,int> newPair = make_pair(vec.first,vec.second);
+          this->turnedGraph.at(vec.first).emplace_back(newPair);
     }
   }
-  return <#initializer#>;
+}
+
+const graphMap &Vehicle::getGraph() const {
+    return graph;
+}
+
+const graphMap &Vehicle::getTurnedGraph() const {
+    return turnedGraph;
 }
 

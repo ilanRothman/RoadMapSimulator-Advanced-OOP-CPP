@@ -1,6 +1,8 @@
 #include "RoadMap.h"
 
-void RoadMap::addEdge(shared_ptr<Junction> const &source,shared_ptr<Junction>const & target, int duration) {
+#include <utility>
+
+void RoadMap::addEdge(shared_ptr<Junction> const &source,shared_ptr<Junction>const &target, int duration,const string& type) {
 
   // check if source exists
   for(auto& src : graph) {
@@ -8,20 +10,24 @@ void RoadMap::addEdge(shared_ptr<Junction> const &source,shared_ptr<Junction>con
     if (src.first->getName() == source->getName()) {
       for (auto& trg: src.second) // going through all Target Junctions
       {
-        if (trg.first->getName() == target->getName()) // There's already an edge
-          if (trg.second > duration) {
-            trg.second = duration;
-            return;
+          if (trg->getDest()->getName() == target->getName() && trg->getType() == type) { // There's already an edge
+              if (trg->getDuration() > duration) {
+                  trg->setDuration(duration);
+                  return;
+              }
           }
       }
-      src.second.emplace_back(target, duration);
+      shared_ptr<Edge> edge = make_shared<Edge>(source,target,duration,type);
+      src.second.emplace_back(edge);
+      cout<< edge->getDest()->getName();
       return;
     }
   }
   // Source doesn't exists
-  auto nTargetPair = std::make_pair(target,duration);
-  vector < pair < shared_ptr<Junction> ,int> > v = {nTargetPair};
+  shared_ptr<Edge> edge = make_shared<Edge>(source,target,duration,type);
+  vector <shared_ptr<Edge> > v = {edge};
   graph.insert({source,v});
+
 }
 
 
@@ -30,9 +36,33 @@ void RoadMap::printMap() const{
   {
     cout << "[ " << source.first->getName() << " ]";
 
-    for ( const auto& secondPair : source.second)
-      cout << " -> [ " << secondPair.first->getName()  << " : "  << secondPair.second << " ] ";
-
+    for ( const auto& secondPair : source.second) {
+        cout << " -> [ " << secondPair->getDest()->getName() << " : " << secondPair->getDuration() << " ] ";
+    }
     cout << endl;
   }
 }
+
+RoadMap::Edge::Edge(const shared_ptr<Junction> &source, const shared_ptr<Junction> &dest, int duration,
+                    string type) : source(source), dest(dest), duration(duration), type(std::move(type)) {}
+
+const shared_ptr<Junction> &RoadMap::Edge::getSource() const {
+    return source;
+}
+
+const shared_ptr<Junction> &RoadMap::Edge::getDest() const {
+    return dest;
+}
+
+int RoadMap::Edge::getDuration() const {
+    return duration;
+}
+
+const string &RoadMap::Edge::getType() const {
+    return type;
+}
+
+void RoadMap::Edge::setDuration(int dur) {
+    Edge::duration = dur;
+}
+

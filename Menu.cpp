@@ -48,6 +48,7 @@ void Menu::startMenu() {
                 outBound(command);
                 break;
             case 3:
+                outBound(command);
                 break;
             case 4:
                 break;
@@ -159,25 +160,28 @@ void Menu::addEdge(string& option, string& source, string& target , string& dura
         case 'b':
         {
             bus.addEdge(src,trg,dur);
+            generalMap.addEdge(src,trg,dur,"bus");
             break;
         }
         case 's':
         {
             sprinter.addEdge(src,trg,dur);
+            generalMap.addEdge(src,trg,dur,"sprinter");
             break;
         }
         case 't':
         {
             tram.addEdge(src,trg,dur);
+            generalMap.addEdge(src,trg,dur,"tram");
             break;
         }
         case 'r':
         {
             rail.addEdge(src,trg,dur);
+            generalMap.addEdge(src,trg,dur,"rail");
             break;
         }
     }
-    generalMap.addEdge(src,trg, dur);
 }
 
 //checking what type of junction and creating it accordingly.
@@ -190,16 +194,26 @@ shared_ptr<Junction> Menu::createJunc(string &name) {
 }
 
 void Menu::outBound(const string &source) const {
-  cout<< "bus: ";
-  bus.BFS(source);
-  cout << "rail: ";
-  rail.BFS(source);
-  cout << "tram: ";
-  tram.BFS(source);
-  cout << "sprinter: ";
-  sprinter.BFS(source);
+    cout<< "bus: \n";
+    bus.BFS(source,bus.getGraph());
+    cout << "rail: \n";
+    rail.BFS(source, rail.getGraph());
+    cout << "tram: \n";
+    tram.BFS(source,tram.getGraph());
+    cout << "sprinter: \n";
+    sprinter.BFS(source,sprinter.getGraph());
+
 }
 void Menu::inBound(const string &source) const {
+    cout<< "bus: ";
+    bus.BFS(source,bus.getTurnedGraph());
+    cout << "rail: ";
+    rail.BFS(source,rail.getTurnedGraph());
+    cout << "tram: ";
+    tram.BFS(source,tram.getTurnedGraph());
+    cout << "sprinter: ";
+    sprinter.BFS(source,sprinter.getTurnedGraph());
+
 
 }
 

@@ -8,136 +8,136 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/cygdrive/c/Users/Paz_m/CLionProjects/RoadMapSimulator/cmake-build-debug"/>
+				<Option working_dir="C:/Users/iroth/CLionProjects/RoadMapSimulator/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make.exe -j12 -f &quot;/cygdrive/c/Users/Paz_m/CLionProjects/RoadMapSimulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make.exe -j12 -f &quot;/cygdrive/c/Users/Paz_m/CLionProjects/RoadMapSimulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make.exe -j12 -f &quot;/cygdrive/c/Users/Paz_m/CLionProjects/RoadMapSimulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make.exe -j12 -f &quot;/cygdrive/c/Users/Paz_m/CLionProjects/RoadMapSimulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="rebuild_cache">
-				<Option working_dir="/cygdrive/c/Users/Paz_m/CLionProjects/RoadMapSimulator/cmake-build-debug"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make.exe -j12 -f &quot;/cygdrive/c/Users/Paz_m/CLionProjects/RoadMapSimulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make.exe -j12 -f &quot;/cygdrive/c/Users/Paz_m/CLionProjects/RoadMapSimulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make.exe -j12 -f &quot;/cygdrive/c/Users/Paz_m/CLionProjects/RoadMapSimulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make.exe -j12 -f &quot;/cygdrive/c/Users/Paz_m/CLionProjects/RoadMapSimulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="edit_cache">
-				<Option working_dir="/cygdrive/c/Users/Paz_m/CLionProjects/RoadMapSimulator/cmake-build-debug"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make.exe -j12 -f &quot;/cygdrive/c/Users/Paz_m/CLionProjects/RoadMapSimulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make.exe -j12 -f &quot;/cygdrive/c/Users/Paz_m/CLionProjects/RoadMapSimulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make.exe -j12 -f &quot;/cygdrive/c/Users/Paz_m/CLionProjects/RoadMapSimulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make.exe -j12 -f &quot;/cygdrive/c/Users/Paz_m/CLionProjects/RoadMapSimulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/iroth/CLionProjects/RoadMapSimulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/iroth/CLionProjects/RoadMapSimulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/iroth/CLionProjects/RoadMapSimulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/iroth/CLionProjects/RoadMapSimulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="EX2">
-				<Option output="/cygdrive/c/Users/Paz_m/CLionProjects/RoadMapSimulator/cmake-build-debug/EX2.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/cygdrive/c/Users/Paz_m/CLionProjects/RoadMapSimulator/cmake-build-debug"/>
+				<Option output="C:/Users/iroth/CLionProjects/RoadMapSimulator/cmake-build-debug/EX2.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/iroth/CLionProjects/RoadMapSimulator/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.4.0/include/c++"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.4.0/include/c++/x86_64-pc-cygwin"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.4.0/include/c++/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.4.0/include"/>
-					<Add directory="/usr/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.4.0/../../../../lib/../include/w32api"/>
+					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++"/>
+					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward"/>
+					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include"/>
+					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make.exe -j12 -f &quot;/cygdrive/c/Users/Paz_m/CLionProjects/RoadMapSimulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 EX2"/>
-					<CompileFile command="/usr/bin/make.exe -j12 -f &quot;/cygdrive/c/Users/Paz_m/CLionProjects/RoadMapSimulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make.exe -j12 -f &quot;/cygdrive/c/Users/Paz_m/CLionProjects/RoadMapSimulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make.exe -j12 -f &quot;/cygdrive/c/Users/Paz_m/CLionProjects/RoadMapSimulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/iroth/CLionProjects/RoadMapSimulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 EX2"/>
+					<CompileFile command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/iroth/CLionProjects/RoadMapSimulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/iroth/CLionProjects/RoadMapSimulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/iroth/CLionProjects/RoadMapSimulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="EX2/fast">
-				<Option output="/cygdrive/c/Users/Paz_m/CLionProjects/RoadMapSimulator/cmake-build-debug/EX2.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/cygdrive/c/Users/Paz_m/CLionProjects/RoadMapSimulator/cmake-build-debug"/>
+				<Option output="C:/Users/iroth/CLionProjects/RoadMapSimulator/cmake-build-debug/EX2.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/iroth/CLionProjects/RoadMapSimulator/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.4.0/include/c++"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.4.0/include/c++/x86_64-pc-cygwin"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.4.0/include/c++/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.4.0/include"/>
-					<Add directory="/usr/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.4.0/../../../../lib/../include/w32api"/>
+					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++"/>
+					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward"/>
+					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include"/>
+					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make.exe -j12 -f &quot;/cygdrive/c/Users/Paz_m/CLionProjects/RoadMapSimulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 EX2/fast"/>
-					<CompileFile command="/usr/bin/make.exe -j12 -f &quot;/cygdrive/c/Users/Paz_m/CLionProjects/RoadMapSimulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make.exe -j12 -f &quot;/cygdrive/c/Users/Paz_m/CLionProjects/RoadMapSimulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make.exe -j12 -f &quot;/cygdrive/c/Users/Paz_m/CLionProjects/RoadMapSimulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/iroth/CLionProjects/RoadMapSimulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 EX2/fast"/>
+					<CompileFile command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/iroth/CLionProjects/RoadMapSimulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/iroth/CLionProjects/RoadMapSimulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/iroth/CLionProjects/RoadMapSimulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="C:/Users/iroth/CLionProjects/RoadMapSimulator/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/iroth/CLionProjects/RoadMapSimulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/iroth/CLionProjects/RoadMapSimulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/iroth/CLionProjects/RoadMapSimulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/iroth/CLionProjects/RoadMapSimulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="C:/Users/iroth/CLionProjects/RoadMapSimulator/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/iroth/CLionProjects/RoadMapSimulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/iroth/CLionProjects/RoadMapSimulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/iroth/CLionProjects/RoadMapSimulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/iroth/CLionProjects/RoadMapSimulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/cygdrive/c/Users/Paz_m/CLionProjects/RoadMapSimulator/FileMgr.cpp">
+		<Unit filename="C:/Users/iroth/CLionProjects/RoadMapSimulator/FileMgr.cpp">
 			<Option target="EX2"/>
 		</Unit>
-		<Unit filename="/cygdrive/c/Users/Paz_m/CLionProjects/RoadMapSimulator/FileMgr.h">
+		<Unit filename="C:/Users/iroth/CLionProjects/RoadMapSimulator/FileMgr.h">
 			<Option target="EX2"/>
 		</Unit>
-		<Unit filename="/cygdrive/c/Users/Paz_m/CLionProjects/RoadMapSimulator/Junction/Junction.cpp">
+		<Unit filename="C:/Users/iroth/CLionProjects/RoadMapSimulator/Junction/Junction.cpp">
 			<Option target="EX2"/>
 		</Unit>
-		<Unit filename="/cygdrive/c/Users/Paz_m/CLionProjects/RoadMapSimulator/Junction/Junction.h">
+		<Unit filename="C:/Users/iroth/CLionProjects/RoadMapSimulator/Junction/Junction.h">
 			<Option target="EX2"/>
 		</Unit>
-		<Unit filename="/cygdrive/c/Users/Paz_m/CLionProjects/RoadMapSimulator/Menu.cpp">
+		<Unit filename="C:/Users/iroth/CLionProjects/RoadMapSimulator/Menu.cpp">
 			<Option target="EX2"/>
 		</Unit>
-		<Unit filename="/cygdrive/c/Users/Paz_m/CLionProjects/RoadMapSimulator/Menu.h">
+		<Unit filename="C:/Users/iroth/CLionProjects/RoadMapSimulator/Menu.h">
 			<Option target="EX2"/>
 		</Unit>
-		<Unit filename="/cygdrive/c/Users/Paz_m/CLionProjects/RoadMapSimulator/RoadMap.cpp">
+		<Unit filename="C:/Users/iroth/CLionProjects/RoadMapSimulator/RoadMap.cpp">
 			<Option target="EX2"/>
 		</Unit>
-		<Unit filename="/cygdrive/c/Users/Paz_m/CLionProjects/RoadMapSimulator/RoadMap.h">
+		<Unit filename="C:/Users/iroth/CLionProjects/RoadMapSimulator/RoadMap.h">
 			<Option target="EX2"/>
 		</Unit>
-		<Unit filename="/cygdrive/c/Users/Paz_m/CLionProjects/RoadMapSimulator/Vehicle/Bus.cpp">
+		<Unit filename="C:/Users/iroth/CLionProjects/RoadMapSimulator/Vehicle/Bus.cpp">
 			<Option target="EX2"/>
 		</Unit>
-		<Unit filename="/cygdrive/c/Users/Paz_m/CLionProjects/RoadMapSimulator/Vehicle/Bus.h">
+		<Unit filename="C:/Users/iroth/CLionProjects/RoadMapSimulator/Vehicle/Bus.h">
 			<Option target="EX2"/>
 		</Unit>
-		<Unit filename="/cygdrive/c/Users/Paz_m/CLionProjects/RoadMapSimulator/Vehicle/Rail.cpp">
+		<Unit filename="C:/Users/iroth/CLionProjects/RoadMapSimulator/Vehicle/Rail.cpp">
 			<Option target="EX2"/>
 		</Unit>
-		<Unit filename="/cygdrive/c/Users/Paz_m/CLionProjects/RoadMapSimulator/Vehicle/Rail.h">
+		<Unit filename="C:/Users/iroth/CLionProjects/RoadMapSimulator/Vehicle/Rail.h">
 			<Option target="EX2"/>
 		</Unit>
-		<Unit filename="/cygdrive/c/Users/Paz_m/CLionProjects/RoadMapSimulator/Vehicle/Sprinter.cpp">
+		<Unit filename="C:/Users/iroth/CLionProjects/RoadMapSimulator/Vehicle/Sprinter.cpp">
 			<Option target="EX2"/>
 		</Unit>
-		<Unit filename="/cygdrive/c/Users/Paz_m/CLionProjects/RoadMapSimulator/Vehicle/Sprinter.h">
+		<Unit filename="C:/Users/iroth/CLionProjects/RoadMapSimulator/Vehicle/Sprinter.h">
 			<Option target="EX2"/>
 		</Unit>
-		<Unit filename="/cygdrive/c/Users/Paz_m/CLionProjects/RoadMapSimulator/Vehicle/Tram.cpp">
+		<Unit filename="C:/Users/iroth/CLionProjects/RoadMapSimulator/Vehicle/Tram.cpp">
 			<Option target="EX2"/>
 		</Unit>
-		<Unit filename="/cygdrive/c/Users/Paz_m/CLionProjects/RoadMapSimulator/Vehicle/Tram.h">
+		<Unit filename="C:/Users/iroth/CLionProjects/RoadMapSimulator/Vehicle/Tram.h">
 			<Option target="EX2"/>
 		</Unit>
-		<Unit filename="/cygdrive/c/Users/Paz_m/CLionProjects/RoadMapSimulator/Vehicle/Vehicle.cpp">
+		<Unit filename="C:/Users/iroth/CLionProjects/RoadMapSimulator/Vehicle/Vehicle.cpp">
 			<Option target="EX2"/>
 		</Unit>
-		<Unit filename="/cygdrive/c/Users/Paz_m/CLionProjects/RoadMapSimulator/Vehicle/Vehicle.h">
+		<Unit filename="C:/Users/iroth/CLionProjects/RoadMapSimulator/Vehicle/Vehicle.h">
 			<Option target="EX2"/>
 		</Unit>
-		<Unit filename="/cygdrive/c/Users/Paz_m/CLionProjects/RoadMapSimulator/main.cpp">
+		<Unit filename="C:/Users/iroth/CLionProjects/RoadMapSimulator/main.cpp">
 			<Option target="EX2"/>
 		</Unit>
-		<Unit filename="/cygdrive/c/Users/Paz_m/CLionProjects/RoadMapSimulator/CMakeLists.txt">
+		<Unit filename="C:/Users/iroth/CLionProjects/RoadMapSimulator/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

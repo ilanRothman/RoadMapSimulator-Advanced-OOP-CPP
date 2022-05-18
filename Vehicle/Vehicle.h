@@ -8,18 +8,22 @@
 #include "memory"
 #include "iostream"
 #include "list"
+typedef map<shared_ptr<Junction>, vector<pair<shared_ptr<Junction>, int> > > graphMap;
+
 using namespace std;
 
 
 class Vehicle {
     private:
     int stopTime;
-    map <shared_ptr<Junction> , vector < pair < shared_ptr<Junction> ,int> > > graph;
+    graphMap graph;
+    graphMap turnedGraph;
 
     public:
         Vehicle(int st) : stopTime(st) {};
 
         //getters and setters.
+        const graphMap &getGraph() const;
 
         int getStopTime() const { return stopTime;}
 
@@ -29,15 +33,19 @@ class Vehicle {
 
         void printMap() const;
 
-        void BFS(string const&  juncName) const;
+        void BFS(string const&  juncName, const graphMap& gr) const;
 
         shared_ptr<Junction> getSource(string const& source) const;
 
-        void dfsHelper(const string& target);
+        void UpdateTurnedGraph();
 
-        void DFS(const string& source,const string& target, map<string,bool> & visited, bool& toPrint);
+        const graphMap &getTurnedGraph() const;
 
-        map <shared_ptr<Junction>, vector < pair < shared_ptr<Junction> ,int> > >& turnedGraph();
+
+//        void dfsHelper(const string& target);
+//
+//        void DFS(const string& source,const string& target, map<string,bool> & visited, bool& toPrint);
+
 
 };
 
