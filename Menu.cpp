@@ -48,9 +48,10 @@ void Menu::startMenu() {
                 outBound(command);
                 break;
             case 3:
-                outBound(command);
+                inBound(command);
                 break;
             case 4:
+                uniExpress(command);
                 break;
             case 5:
                 break;
@@ -132,23 +133,6 @@ void Menu::config() {
 
 }
 
-//menu keys for the menu switch case and junction transit times.
-void Menu::mapInit() {
-
-  commands.insert({"load",1});
-  commands.insert({"outbound",2});
-  commands.insert({"inbound",3});
-  commands.insert({"uniExpress",4});
-  commands.insert({"multiExpress",5});
-  commands.insert({"print",6});
-  commands.insert({"Exit",7});
-  commands.insert({"TEST",8});
-
-  stationTimes.insert({"IC",15});
-  stationTimes.insert({"CS",10});
-  stationTimes.insert({"ST",5});
-}
-
 //adding an edge to the vehicle map and the general map.
 void Menu::addEdge(string& option, string& source, string& target , string& duration) {
     auto src = createJunc(source);
@@ -194,28 +178,66 @@ shared_ptr<Junction> Menu::createJunc(string &name) {
 }
 
 void Menu::outBound(const string &source) const {
-    cout<< "bus: \n";
+    cout<< "bus: ";
     bus.BFS(source,bus.getGraph());
-    cout << "rail: \n";
+    cout << "rail: ";
     rail.BFS(source, rail.getGraph());
-    cout << "tram: \n";
+    cout << "tram: ";
     tram.BFS(source,tram.getGraph());
-    cout << "sprinter: \n";
+    cout << "sprinter: ";
     sprinter.BFS(source,sprinter.getGraph());
 
 }
-void Menu::inBound(const string &source) const {
+void Menu::inBound(const string &source){
     cout<< "bus: ";
+    bus.updateTurnedGraph();
     bus.BFS(source,bus.getTurnedGraph());
     cout << "rail: ";
     rail.BFS(source,rail.getTurnedGraph());
+    rail.updateTurnedGraph();
     cout << "tram: ";
+    tram.updateTurnedGraph();
     tram.BFS(source,tram.getTurnedGraph());
     cout << "sprinter: ";
+    sprinter.updateTurnedGraph();
     sprinter.BFS(source,sprinter.getTurnedGraph());
 
 
 }
 
+void Menu::uniExpress(const string &command) {
+    string source,target;
+    stringstream ss(command);
+    ss >> source >> target;
+    if(ss.rdbuf()->in_avail() || ss.fail()){
+        throw runtime_error("wrong amount of arguments.\n");
+    }
+//    cout<< "bus: ";
+//    bus.dijkstra(source,target);
+//    cout << "rail: ";
+//    rail.dijkstra(source, target);
+//    cout << "tram: ";
+//    tram.dijkstra(source, target);
+    cout << "sprinter: ";
+    sprinter.dijkstra(source, target);
+}
+
+
+//menu keys for the menu switch case and junction transit times.
+void Menu::mapInit() {
+
+    commands.insert({"load",1});
+    commands.insert({"outbound",2});
+    commands.insert({"inbound",3});
+    commands.insert({"uniExpress",4});
+    commands.insert({"multiExpress",5});
+    commands.insert({"print",6});
+    commands.insert({"Exit",7});
+    commands.insert({"TEST",8});
+
+    stationTimes.insert({"IC",15});
+    stationTimes.insert({"CS",10});
+    stationTimes.insert({"ST",5});
+}
 
 

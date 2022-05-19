@@ -22,6 +22,7 @@ class Vehicle {
     public:
         Vehicle(int st) : stopTime(st) {};
 
+        void dijkstra(const string &source, const string &target);
         //getters and setters.
         const graphMap &getGraph() const;
 
@@ -37,7 +38,7 @@ class Vehicle {
 
         shared_ptr<Junction> getSource(string const& source) const;
 
-        void UpdateTurnedGraph();
+        void updateTurnedGraph();
 
         const graphMap &getTurnedGraph() const;
 

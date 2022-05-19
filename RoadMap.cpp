@@ -3,7 +3,9 @@
 #include <utility>
 
 void RoadMap::addEdge(shared_ptr<Junction> const &source,shared_ptr<Junction>const &target, int duration,const string& type) {
-
+    if( !getSource(target->getName()) ){ // if target isn't in graph yet.
+        graph.insert({target,vector < shared_ptr<Edge> >()});
+    }
   // check if source exists
   for(auto& src : graph) {
 
@@ -40,6 +42,13 @@ void RoadMap::printMap() const{
     }
     cout << endl;
   }
+}
+
+shared_ptr<Junction> RoadMap::getSource(const string &source) const {
+    for( const auto& i : graph )
+        if( i.first->getName() == source )
+            return i.first;
+    return nullptr;
 }
 
 

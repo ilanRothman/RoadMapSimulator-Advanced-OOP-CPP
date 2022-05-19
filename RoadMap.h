@@ -7,15 +7,15 @@
 
 using namespace std;
 
-class RoadMap{
-    class Edge{
-        private:
-            const string& source;
-            const string &dest;
-            int duration;
-            string type;
-        public:
-            Edge(const string& source, const string& target, int duration, string type);
+class RoadMap {
+    class Edge {
+    private:
+        const string &source;
+        const string &dest;
+        int duration;
+        string type;
+    public:
+        Edge(const string &source, const string &target, int duration, string type);
 
         const string &getSource() const;
 
@@ -23,17 +23,22 @@ class RoadMap{
 
         int getDuration() const;
 
-            void setDuration(int dur);
+        void setDuration(int dur);
 
-            const string &getType() const;
+        const string &getType() const;
 
     };
+
 private:
-    map <shared_ptr<Junction> , vector<shared_ptr<Edge>> > graph;
+    map<shared_ptr<Junction>, vector<shared_ptr<Edge>>> graph;
 
 public:
-    void addEdge(shared_ptr<Junction> const &source,shared_ptr<Junction>const & target, int duration,const string& type);
-    void printMap() const;
-};
+    void
+    addEdge(shared_ptr<Junction> const &source, shared_ptr<Junction> const &target, int duration, const string &type);
 
+    void printMap() const;
+
+    shared_ptr<Junction> getSource(const string &source) const;
+
+};
 #endif //EX2_ROADMAP_H

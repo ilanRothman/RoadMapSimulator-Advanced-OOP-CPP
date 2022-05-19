@@ -3,6 +3,9 @@
 
 using namespace std;
 
+#include "queue"
+#include "exception"
+
 void Vehicle::addEdge(shared_ptr<Junction>const& source,shared_ptr<Junction>const& target, int duration) {
   if( !getSource(target->getName()) ){ // if target isn't in graph yet.
     graph.insert({target,vector < pair < shared_ptr<Junction> ,int> >()});
@@ -86,52 +89,8 @@ shared_ptr<Junction> Vehicle::getSource(const string &source) const{
   return nullptr;
 }
 
-//void Vehicle::DFS(const string &source,const string &target, map<string, bool> &visited, bool &toPrint) {
-//  if( source == target )
-//  {
-//    toPrint = true;
-//    return;
-//  }
-//  visited.at(source) = true;
-//  for ( const auto& i : graph.at(getSource(source)) )
-//  {
-//    if( !visited.at(i.first->getName()) )
-//    {
-//      DFS(i.first->getName(),target,visited,toPrint);
-//      if( toPrint ) {
-//        cout << "[ " <<  source << " ]";
-////        return;
-//      }
-//    }
-//  }
-//}
-//
-//void Vehicle::dfsHelper(const string& target){
-//  map<string,bool> visited;
-//  bool toPrint = false;
-//  bool printed = false;
-//
-//  for(const auto& i: graph)
-//    visited.insert({i.first->getName(),false});
-//
-//  for(const auto& i: visited)
-//  {
-//    if( !i.second )
-//    {
-//      DFS(i.first,target,visited,toPrint);
-//    }
-//    if( toPrint )
-//      printed = true;
-//
-//    toPrint = false;
-//  }
-//
-//  if(!printed)
-//    cout << "NO ROADS AT ALL";
-//
-//}
 
-void Vehicle::UpdateTurnedGraph() {
+void Vehicle::updateTurnedGraph() {
   //creating all sources for turned graph.
   for(const auto & key:graph){
       vector<pair<shared_ptr<Junction>,int > >p; // vector val.
@@ -141,8 +100,9 @@ void Vehicle::UpdateTurnedGraph() {
   {
       for(const auto& vec: key.second )
     {
-          pair<shared_ptr<Junction>,int> newPair = make_pair(vec.first,vec.second);
-          this->turnedGraph.at(vec.first).emplace_back(newPair);
+          pair<shared_ptr<Junction>,int> newPair = make_pair(key.first,vec.second);
+
+          this->turnedGraph.at(getSource(vec.first->getName())).emplace_back(newPair);
     }
   }
 }
@@ -154,4 +114,56 @@ const graphMap &Vehicle::getGraph() const {
 const graphMap &Vehicle::getTurnedGraph() const {
     return turnedGraph;
 }
+
+void Vehicle::dijkstra(const string &source, const string &target) {
+    auto cmp = [](const shared_ptr<pair<string, int> >& lhs, const shared_ptr<pair<string, int> >& rhs)
+    {
+        return lhs->second > rhs->second;
+    };
+
+    priority_queue < shared_ptr<pair <string , int>  >, vector< shared_ptr < pair<string, int> > >, decltype(cmp) > minHeap(cmp);
+
+    map < string, shared_ptr< pair <string , int> > > distances;
+    shared_ptr<pair<string,int> > ptr;
+
+    for(auto junc : graph){ // insert all junctions
+        ptr = make_shared<pair<string,int> >(junc.first->getName(),INT32_MAX);
+        minHeap.push(ptr);
+        distances.insert({ptr->first,ptr});
+    }
+
+    if(distances.find(source) == distances.end() || distances.find(target) == distances.end())
+    {
+        cout << "route unavailable\n";
+        return;
+    }
+
+    ptr = distances.at(source);
+    ptr->second = 0;
+
+
+    while(!minHeap.empty()){
+        for(const auto& adj : getAdj(ptr->first)){
+            if(distances.at(adj.first->getName())->second > adj.second + ptr->second + stopTime){
+                distances.at(adj.first->getName())->second = adj.second + ptr->second + stopTime;
+            }
+        }
+        minHeap.pop();
+        ptr = minHeap.top();
+
+    }
+    if(distances.at(target)->second == INT32_MAX){
+        cout << "route unavailable\n";
+        return;
+    }
+    cout<< distances.at(target)->second - stopTime << endl;
+
+}
+
+const vector<pair<shared_ptr<Junction>, int> > &Vehicle::getAdj(string &source) {
+
+    return graph.at(getSource(source));
+}
+
+
 
