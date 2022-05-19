@@ -12,7 +12,6 @@ typedef map<shared_ptr<Junction>, vector<pair<shared_ptr<Junction>, int> > > gra
 
 using namespace std;
 
-
 class Vehicle {
     private:
     int stopTime;
@@ -41,6 +40,8 @@ class Vehicle {
         void updateTurnedGraph();
 
         const graphMap &getTurnedGraph() const;
+
+        const vector<pair<shared_ptr<Junction>, int> > & getAdj(string& source);
 
 
 //        void dfsHelper(const string& target);
