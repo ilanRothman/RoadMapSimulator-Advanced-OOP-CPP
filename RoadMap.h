@@ -37,7 +37,7 @@ public:
 
     void addEdge(shared_ptr<Junction> const &source, shared_ptr<Junction> const &target, int duration, const char &type);
 
-    void printMap() const;
+//    void printMap() const;
 
     shared_ptr<Junction> getSource(const string &source) const;
 

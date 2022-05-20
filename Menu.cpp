@@ -155,13 +155,13 @@ void Menu::addEdge(string& option, string& source, string& target , string& dura
         case 't':
         {
             tram.addEdge(src,trg,dur);
-            generalMap.addEdge(src,trg,dur,"tram");
+            generalMap.addEdge(src,trg,dur,'t');
             break;
         }
         case 'r':
         {
             rail.addEdge(src,trg,dur);
-            generalMap.addEdge(src,trg,dur,"rail");
+            generalMap.addEdge(src,trg,dur,'r');
             break;
         }
     }
@@ -185,7 +185,6 @@ void Menu::outBound(const string &source) const {
     tram.BFS(source,tram.getGraph());
     cout << "sprinter: ";
     sprinter.BFS(source,sprinter.getGraph());
-
 }
 void Menu::inBound(const string &source){
     cout<< "bus: ";
@@ -200,8 +199,6 @@ void Menu::inBound(const string &source){
     cout << "sprinter: ";
     sprinter.updateTurnedGraph();
     sprinter.BFS(source,sprinter.getTurnedGraph());
-
-
 }
 
 void Menu::uniExpress(const string &command) {

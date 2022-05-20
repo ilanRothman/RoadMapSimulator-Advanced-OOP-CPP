@@ -32,8 +32,8 @@ void RoadMap::addEdge(shared_ptr<Junction> const &source,shared_ptr<Junction>con
 
 shared_ptr<Junction> RoadMap::getSource(const string &source) const {
     for( const auto& i : graph )
-        if( i.first->getName() == source )
-            return i.first;
+        if( i.first.first->getName() == source )
+            return i.first.first;
     return nullptr;
 }
 
