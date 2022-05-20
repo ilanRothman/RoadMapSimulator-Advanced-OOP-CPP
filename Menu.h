@@ -38,6 +38,8 @@ class Menu{
         void outBound(const string& source) const;
         void inBound(const string& source);
         void uniExpress(const string &command);
+
+    void multiExpress(string command);
 };
 
 #endif //EX2_MENU_H

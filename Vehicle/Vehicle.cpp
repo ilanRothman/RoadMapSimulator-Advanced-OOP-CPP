@@ -140,8 +140,6 @@ void Vehicle::dijkstra(const string &source, const string &target) {
 
     ptr = distances.at(source);
     ptr->second = 0;
-
-
     while(!minHeap.empty()){
         for(const auto& adj : getAdj(ptr->first)){
             if(distances.at(adj.first->getName())->second > adj.second + ptr->second + stopTime){

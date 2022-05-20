@@ -54,6 +54,7 @@ void Menu::startMenu() {
                 uniExpress(command);
                 break;
             case 5:
+                multiExpress(command);
                 break;
             case 6:
                 print();
@@ -91,8 +92,6 @@ void Menu::print() const
   tram.printMap();
   cout<< "\n\nRail: " << endl;
   rail.printMap();
-  cout<<"\n\nGeneralMap: " <<endl;
-  generalMap.printMap();
 }
 
 //setting default values according to config file.
@@ -144,13 +143,13 @@ void Menu::addEdge(string& option, string& source, string& target , string& dura
         case 'b':
         {
             bus.addEdge(src,trg,dur);
-            generalMap.addEdge(src,trg,dur,"bus");
+            generalMap.addEdge(src,trg,dur,'b');
             break;
         }
         case 's':
         {
             sprinter.addEdge(src,trg,dur);
-            generalMap.addEdge(src,trg,dur,"sprinter");
+            generalMap.addEdge(src,trg,dur,'s');
             break;
         }
         case 't':
@@ -212,12 +211,12 @@ void Menu::uniExpress(const string &command) {
     if(ss.rdbuf()->in_avail() || ss.fail()){
         throw runtime_error("wrong amount of arguments.\n");
     }
-//    cout<< "bus: ";
-//    bus.dijkstra(source,target);
-//    cout << "rail: ";
-//    rail.dijkstra(source, target);
-//    cout << "tram: ";
-//    tram.dijkstra(source, target);
+    cout<< "bus: ";
+    bus.dijkstra(source,target);
+    cout << "rail: ";
+    rail.dijkstra(source, target);
+    cout << "tram: ";
+    tram.dijkstra(source, target);
     cout << "sprinter: ";
     sprinter.dijkstra(source, target);
 }
@@ -238,6 +237,17 @@ void Menu::mapInit() {
     stationTimes.insert({"IC",15});
     stationTimes.insert({"CS",10});
     stationTimes.insert({"ST",5});
+}
+
+void Menu::multiExpress(string command) {
+    string source,target;
+    stringstream ss(command);
+    ss >> source >> target;
+    if(ss.rdbuf()->in_avail() || ss.fail()){
+        throw runtime_error("wrong amount of arguments.\n");
+    }
+    generalMap.dijkstra(source,target);
+
 }
 
 
