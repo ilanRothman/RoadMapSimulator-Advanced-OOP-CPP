@@ -35,13 +35,16 @@ private:
     map<pair<juncPtr ,char > , vector<shared_ptr<Edge> > > graph;
 
 public:
-    RoadMap();
+
+  typedef vector<shared_ptr<RoadMap::Edge> > vecEdge;
+
+  RoadMap();
 
     void addEdge(juncPtr  const &source, juncPtr  const &target, int duration, const char &type,  map<char,int> &stopTimes);
 
     void printMap() const;
 
-    juncPtr  getSource(const string &source) const;
+    juncPtr getSource(const string &source) const;
 
     void dijkstra(const string &source, const string &target ,map<char,int> &stopTimes);
 
@@ -57,6 +60,11 @@ public:
 
     void createEdges(const juncPtr& source, const juncPtr  &target,map<char,int> &stopsTimes);
 
-    vector<shared_ptr<Edge> >& getAdj(juncPtrType& ptr);
+    vecEdge& getAdj(juncPtrType& ptr);
+
+    vecEdge& getTargetVector(juncPtr const& source);
+
 };
+
+
 #endif //EX2_ROADMAP_H
