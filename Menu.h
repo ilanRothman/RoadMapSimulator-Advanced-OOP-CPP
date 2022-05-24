@@ -26,6 +26,7 @@ class Menu{
         RoadMap generalMap;
         map<string,int> commands;
         map<string,int> stationTimes;
+        map<char,int> stopTimes;
 
     public:
         Menu(int argc, char** argv);
