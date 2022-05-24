@@ -9,6 +9,8 @@
 #include "iostream"
 #include "list"
 typedef map<shared_ptr<Junction>, vector<pair<shared_ptr<Junction>, int> > > graphMap;
+typedef shared_ptr<Junction> juncPtr;
+typedef vector<pair<juncPtr,int> > vecJI;
 
 using namespace std;
 
@@ -19,7 +21,7 @@ class Vehicle {
     graphMap turnedGraph;
 
     public:
-        Vehicle(int st) : stopTime(st) {};
+        explicit Vehicle(int st) : stopTime(st) {};
 
         void dijkstra(const string &source, const string &target);
         //getters and setters.
@@ -43,6 +45,11 @@ class Vehicle {
 
         const vector<pair<shared_ptr<Junction>, int> > & getAdj(string& source);
 
+        void updateTargetInGraph(juncPtr const& target);
+
+        void updateTargetDuration(juncPtr const&target, juncPtr const& source, int duration);
+
+        bool sourceExistsInGraph(juncPtr const& source);
 
 //        void dfsHelper(const string& target);
 //

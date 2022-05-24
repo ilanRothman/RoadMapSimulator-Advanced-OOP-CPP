@@ -4,34 +4,8 @@
 using namespace std;
 
 #include "queue"
-#include "exception"
 
-void Vehicle::addEdge(shared_ptr<Junction>const& source,shared_ptr<Junction>const& target, int duration) {
-  if( !getSource(target->getName()) ){ // if target isn't in graph yet.
-    graph.insert({target,vector < pair < shared_ptr<Junction> ,int> >()});
-  }
-  // check if source exists
-    for(auto& src : graph) {
 
-      if (src.first->getName() == source->getName()) {
-        for (auto& trg: src.second) // going through all Target Junctions
-        {
-          if (trg.first->getName() == target->getName()) // There's already an edge
-            if (trg.second > duration) {
-              trg.second = duration;
-              return;
-            }
-        }
-        src.second.emplace_back(target, duration);
-        return;
-      }
-    }
-    // Source doesn't exists
-    auto nTargetPair = std::make_pair(target,duration);
-    vector < pair < shared_ptr<Junction> ,int> > v = {nTargetPair};
-    graph.insert({source,v});
-
-}
 
 void Vehicle::printMap() const{
   for( const auto& source : graph )
@@ -47,9 +21,9 @@ void Vehicle::printMap() const{
 
 void Vehicle::BFS(const string &juncName,const graphMap& gr) const{
 
-  shared_ptr<Junction> src = getSource(juncName);
+  juncPtr src = getSource(juncName);
   string name;
-
+  bool printed = false;
   if(!src) {
     cout << juncName << " does not exist in the current network. \n";
     return;
@@ -74,33 +48,35 @@ void Vehicle::BFS(const string &juncName,const graphMap& gr) const{
       if(visited.at(adj.first->getName())){
           continue;
       }
-
+      printed = true;
       cout << adj.first->getName() << "\t";
       visited.at(adj.first->getName()) = true;
       queue.push_back(adj.first->getName());
     }
   }
+  cout << endl;
+  if(!printed)
+    cout << juncName << " does not exist in the current network. \n";
 }
 
-shared_ptr<Junction> Vehicle::getSource(const string &source) const{
+juncPtr Vehicle::getSource(const string &source) const{
   for( const auto& i : graph )
     if( i.first->getName() == source )
       return i.first;
   return nullptr;
 }
 
-
 void Vehicle::updateTurnedGraph() {
   //creating all sources for turned graph.
   for(const auto & key:graph){
-      vector<pair<shared_ptr<Junction>,int > >p; // vector val.
+      vector<pair<juncPtr ,int > >p; // vector val.
       this->turnedGraph.insert(make_pair(key.first,p));
   }
   for(const auto& key:graph)
   {
       for(const auto& vec: key.second )
     {
-          pair<shared_ptr<Junction>,int> newPair = make_pair(key.first,vec.second);
+          pair<juncPtr ,int> newPair = make_pair(key.first,vec.second);
 
           this->turnedGraph.at(getSource(vec.first->getName())).emplace_back(newPair);
     }
@@ -126,7 +102,7 @@ void Vehicle::dijkstra(const string &source, const string &target) {
     map < string, shared_ptr< pair <string , int> > > distances;
     shared_ptr<pair<string,int> > ptr;
 
-    for(auto junc : graph){ // insert all junctions
+    for(const auto& junc : graph){ // insert all junctions
         ptr = make_shared<pair<string,int> >(junc.first->getName(),INT32_MAX);
         minHeap.push(ptr);
         distances.insert({ptr->first,ptr});
@@ -158,10 +134,99 @@ void Vehicle::dijkstra(const string &source, const string &target) {
 
 }
 
-const vector<pair<shared_ptr<Junction>, int> > &Vehicle::getAdj(string &source) {
+const vecJI &Vehicle::getAdj(string &source) {
 
     return graph.at(getSource(source));
 }
 
+void Vehicle::updateTargetInGraph(juncPtr const& target)
+{
+  if(!getSource(target->getName()) ) // if target isn't in graph yet.
+  {
+    graph.insert({target,vecJI()});
+  }
+}
 
+
+
+bool Vehicle::sourceExistsInGraph(juncPtr const& source)
+{
+  cout << source->getName();
+//  cout << graph.at(source).at(0).first->getName();
+  cout.flush();
+  for(auto& src : graph) {
+    if (src.first->getName() == source->getName()) {
+      cout << " found \n" << source->getName();
+      cout << src.first->getName();
+      cout << " check \n" << graph.at(source).at(0).first->getName();
+      cout.flush();
+      cout << " check \n";
+      return true;
+    }
+  }
+  return false;
+}
+
+void Vehicle::updateTargetDuration(juncPtr const&target, juncPtr const& source, int duration)
+{
+
+  for (auto& trg: graph.at(source))
+  {
+    if (trg.first->getName() == target->getName()) // There's already an edge
+      if (trg.second > duration) {
+        trg.second = duration;
+        return;
+      }
+  }
+  graph.at(source).emplace_back(target, duration);
+}
+
+void Vehicle::addEdge(shared_ptr<Junction>const& source,shared_ptr<Junction>const& target, int duration) {
+
+  updateTargetInGraph(target);
+
+  // check if source exists
+    for(auto& src : graph) {
+
+      if (src.first->getName() == source->getName()) {
+
+        for (auto& trg: src.second) // going through all Target Junctions
+        {
+          if (trg.first->getName() == target->getName()) // There's already an edge
+            if (trg.second > duration) {
+              trg.second = duration;
+              return;
+            }
+        }
+        src.second.emplace_back(target, duration);
+        return;
+      }
+    }
+
+
+  // Source doesn't exists
+  auto nTargetPair = std::make_pair(target,duration);
+  vector < pair < shared_ptr<Junction> ,int> > v = {nTargetPair};
+  graph.insert({source,v});
+
+}
+
+
+
+
+//void Vehicle::addEdge(juncPtr const& source,juncPtr const& target, int duration) {
+//
+//  updateTargetInGraph(target);
+//
+//  // check if source exists
+//  if(graph.find(source) != graph.end())
+//  {
+//      updateTargetDuration(target,source,duration);
+//      return;
+//  }
+//
+//  auto nTargetPair = std::make_pair(target,duration);
+//  vecJI v = {nTargetPair};
+//  graph.insert({source,v});
+//}
 

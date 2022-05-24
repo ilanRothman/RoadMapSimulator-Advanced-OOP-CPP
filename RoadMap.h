@@ -4,6 +4,8 @@
 #include "Vehicle/Vehicle.h"
 #include "map"
 
+typedef shared_ptr<Junction>  juncPtr;
+typedef shared_ptr<pair< pair<string, int>,char> > juncPtrType;
 
 using namespace std;
 
@@ -30,31 +32,31 @@ private:
         const char &getType() const;
     };
 
-    map<pair<shared_ptr<Junction>,char > , vector<shared_ptr<Edge> > > graph;
+    map<pair<juncPtr ,char > , vector<shared_ptr<Edge> > > graph;
 
 public:
     RoadMap();
 
-    void addEdge(shared_ptr<Junction> const &source, shared_ptr<Junction> const &target, int duration, const char &type);
+    void addEdge(juncPtr  const &source, juncPtr  const &target, int duration, const char &type,  map<char,int> &stopTimes);
 
-//    void printMap() const;
+    void printMap() const;
 
-    shared_ptr<Junction> getSource(const string &source) const;
+    juncPtr  getSource(const string &source) const;
 
-    void dijkstra(const string &source, const string &target);
+    void dijkstra(const string &source, const string &target ,map<char,int> &stopTimes);
 
-    bool juncExists(shared_ptr<Junction> const&, const char&);
+    bool juncExists(juncPtr const&);
 
-    void makeVertices(shared_ptr<Junction> const& junc);
+    void makeVertices(juncPtr const& junc);
 
-    void connectEdges(const shared_ptr<Junction>& source, const string& target, char& type);
+    void connectEdges(const juncPtr& source, const string& target, char& type ,map<char,int> &stopsTimes);
 
-    void updateEdges(const shared_ptr<Junction> &source, const shared_ptr<Junction> &target, int duration, const char &type);
+    void updateEdges(const juncPtr& source, const juncPtr  &target, int duration, const char &type,  map<char,int> &stopsTimes);
 
-    bool checkEdgeExist(const shared_ptr<Junction> &source, const shared_ptr<Junction> &target);
+    bool checkEdgeExist(const juncPtr& source, const juncPtr  &target);
 
-    void createEdges(const shared_ptr<Junction> &source, const shared_ptr<Junction> &target);
+    void createEdges(const juncPtr& source, const juncPtr  &target,map<char,int> &stopsTimes);
 
-    vector<shared_ptr<Edge> >& getAdj(shared_ptr<pair< pair<string, int>,char> >& ptr);
+    vector<shared_ptr<Edge> >& getAdj(juncPtrType& ptr);
 };
 #endif //EX2_ROADMAP_H

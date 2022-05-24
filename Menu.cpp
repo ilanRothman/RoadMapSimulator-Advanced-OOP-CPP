@@ -92,6 +92,10 @@ void Menu::print() const
   tram.printMap();
   cout<< "\n\nRail: " << endl;
   rail.printMap();
+
+  // delete later
+  cout<< "\n\nGeneralMap: " << endl;
+  generalMap.printMap();
 }
 
 //setting default values according to config file.
@@ -105,17 +109,25 @@ void Menu::config() {
             istringstream ss(line);
             ss >> object >> duration;
 
-            if(object == "bus" )
-                bus.setStopTime(duration);
+            if(object == "bus" ) {
+              bus.setStopTime(duration);
+              stopTimes.at('b') = duration;
+            }
 
-            if(object == "rail")
-                rail.setStopTime(duration);
+            if(object == "rail") {
+              rail.setStopTime(duration);
+              stopTimes.at('r') = duration;
+            }
 
-            if(object == "sprinter")
-                sprinter.setStopTime(duration);
+            if(object == "sprinter"  ) {
+              sprinter.setStopTime(duration);
+              stopTimes.at('s') = duration;
+            }
 
-            if(object == "tram")
-                tram.setStopTime(duration);
+            if(object == "tram") {
+              tram.setStopTime(duration);
+              stopTimes.at('t') = duration;
+            }
 
             if(object == "intercity")
                 stationTimes.find("IC")->second = duration;
@@ -143,25 +155,25 @@ void Menu::addEdge(string& option, string& source, string& target , string& dura
         case 'b':
         {
             bus.addEdge(src,trg,dur);
-            generalMap.addEdge(src,trg,dur,'b');
+            generalMap.addEdge(src,trg,dur,'b',stopTimes);
             break;
         }
         case 's':
         {
             sprinter.addEdge(src,trg,dur);
-            generalMap.addEdge(src,trg,dur,'s');
+            generalMap.addEdge(src,trg,dur,'s',stopTimes);
             break;
         }
         case 't':
         {
             tram.addEdge(src,trg,dur);
-            generalMap.addEdge(src,trg,dur,'t');
+            generalMap.addEdge(src,trg,dur,'t',stopTimes);
             break;
         }
         case 'r':
         {
             rail.addEdge(src,trg,dur);
-            generalMap.addEdge(src,trg,dur,'r');
+            generalMap.addEdge(src,trg,dur,'r' ,stopTimes);
             break;
         }
     }
@@ -191,8 +203,8 @@ void Menu::inBound(const string &source){
     bus.updateTurnedGraph();
     bus.BFS(source,bus.getTurnedGraph());
     cout << "rail: ";
-    rail.BFS(source,rail.getTurnedGraph());
     rail.updateTurnedGraph();
+    rail.BFS(source,rail.getTurnedGraph());
     cout << "tram: ";
     tram.updateTurnedGraph();
     tram.BFS(source,tram.getTurnedGraph());
@@ -203,11 +215,15 @@ void Menu::inBound(const string &source){
 
 void Menu::uniExpress(const string &command) {
     string source,target;
+
+
     stringstream ss(command);
     ss >> source >> target;
+
     if(ss.rdbuf()->in_avail() || ss.fail()){
-        throw runtime_error("wrong amount of arguments.\n");
+      throw runtime_error("wrong amount of arguments.\n");
     }
+
     cout<< "bus: ";
     bus.dijkstra(source,target);
     cout << "rail: ";
@@ -234,6 +250,11 @@ void Menu::mapInit() {
     stationTimes.insert({"IC",15});
     stationTimes.insert({"CS",10});
     stationTimes.insert({"ST",5});
+
+    stopTimes.insert({'b',1});
+    stopTimes.insert({'t',2});
+    stopTimes.insert({'r',5});
+    stopTimes.insert({'s',3});
 }
 
 void Menu::multiExpress(string command) {
@@ -243,7 +264,7 @@ void Menu::multiExpress(string command) {
     if(ss.rdbuf()->in_avail() || ss.fail()){
         throw runtime_error("wrong amount of arguments.\n");
     }
-    generalMap.dijkstra(source,target);
+    generalMap.dijkstra(source,target , stopTimes);
 
 }
 
