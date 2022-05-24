@@ -56,13 +56,13 @@ public:
 
     void updateEdges(const juncPtr& source, const juncPtr  &target, int duration, const char &type,  map<char,int> &stopsTimes);
 
-    bool checkEdgeExist(const juncPtr& source, const juncPtr  &target);
+    bool checkEdgeExist(const juncPtr& source, const juncPtr  &, char type);
 
     void createEdges(const juncPtr& source, const juncPtr  &target,map<char,int> &stopsTimes);
 
     vecEdge& getAdj(juncPtrType& ptr);
 
-    vecEdge& getTargetVector(juncPtr const& source);
+    vecEdge& getTargetVector(juncPtr const& source, char type);
 
 };
 

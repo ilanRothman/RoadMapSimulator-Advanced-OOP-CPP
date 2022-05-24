@@ -17,12 +17,11 @@ void RoadMap::addEdge(juncPtr  const &source,juncPtr const &target, int duration
     if(!juncExists(target)){ // check if target exist.
       makeVertices(target);
     }
-  printMap();
 
-    if(!checkEdgeExist(source,target)){ // checks if edges exists
+    if(!checkEdgeExist(source,target,type)){ // checks if edges exists
       createEdges(source,target,stopTimes);
     }
-  printMap();
+
 
     updateEdges(source,target,duration,type,stopTimes);
 }
@@ -30,11 +29,11 @@ void RoadMap::addEdge(juncPtr  const &source,juncPtr const &target, int duration
 void RoadMap::printMap() const{
   for( const auto& source : graph )
   {
-    cout << "[ " << source.first.first->getName() << " type : "<< source.first.second << " ]";
+    cout << "[ " << source.first.first->getName() << ", type : "<< source.first.second << " ]";
 
     for ( const auto& secondPair : source.second) {
-        cout << " -> [ " << secondPair->getSource() << secondPair->getDest() << " : " << ( secondPair->getDuration() == INT32_MAX ? -1 : secondPair->getDuration() )
-        << " type : " << secondPair->getType() << " ] ";
+        cout << " -> [ " << secondPair->getDest() << " : " << ( secondPair->getDuration() == INT32_MAX ? -1 : secondPair->getDuration() )
+        << ", type : " << secondPair->getType() << " ] ";
     }
     cout << endl;
   }
@@ -90,7 +89,7 @@ void RoadMap::updateEdges(const juncPtr  &source, const juncPtr  &target, int du
                           const char &type , map<char,int> &stopsTimes) {
     int transit = getSource(target->getName())->getTransTime();
 
-    for(const auto& adj: getTargetVector(source))
+    for(const auto& adj: getTargetVector(source,type))
     {
         if(adj->getDest() == target->getName())
         {
@@ -107,10 +106,10 @@ void RoadMap::updateEdges(const juncPtr  &source, const juncPtr  &target, int du
     }
 }
 
-bool RoadMap::checkEdgeExist(const juncPtr  &source, const juncPtr  &target) {
+bool RoadMap::checkEdgeExist(const juncPtr  &source, const juncPtr  &target, char type) {
 
     // going through all source edges, checking if already connected by edge to target
-    for(const auto& adj: getTargetVector(source))
+    for(const auto& adj: getTargetVector(source,type))
         if(adj->getDest() == target->getName())
             return true;
     return false;
@@ -125,35 +124,10 @@ void RoadMap::createEdges(const juncPtr  &source, const juncPtr  &target, map<ch
 
 void RoadMap::connectEdges(const juncPtr & source,const string& target,char& type, map<char,int> &stopTimes) {
 
-    if(type == 't') {
-      getTargetVector(source).emplace_back(make_shared<Edge>(Edge(source->getName(), target, stopTimes.at('t'), 't')));
-    }
-    
-    else {
-      getTargetVector(source).emplace_back(make_shared<Edge>(Edge(source->getName(), target, INT32_MAX, 't')));
-    }
-    
-    if(type == 's'){
-      getTargetVector(source).emplace_back(make_shared<Edge>(Edge(source->getName(),target,stopTimes.at('s'),'s')));
-     }
-    
-    else{
-      getTargetVector(source).emplace_back(make_shared<Edge>(Edge(source->getName(),target,INT32_MAX,'s')));
-  }
-    
-   if(type == 'r'){
-     getTargetVector(source).emplace_back(make_shared<Edge>(Edge(source->getName(),target,INT32_MAX,'r')));
-   }
-   
-   else{
-     getTargetVector(source).emplace_back(make_shared<Edge>(Edge(source->getName(),target,stopTimes.at('r'),'r')));}
-   
-   if(type == 'b'){
-      getTargetVector(source).emplace_back(make_shared<Edge>(Edge(source->getName(),target,stopTimes.at('b'),'b')));
-   }
-   else{
-     getTargetVector(source).emplace_back(make_shared<Edge>(Edge(source->getName(),target,INT32_MAX,'b')));
-   }
+    getTargetVector(source,type).emplace_back(make_shared<Edge>(Edge(source->getName(),target,INT32_MAX,'t')));
+    getTargetVector(source,type).emplace_back(make_shared<Edge>(Edge(source->getName(),target,INT32_MAX,'s')));
+    getTargetVector(source,type).emplace_back(make_shared<Edge>(Edge(source->getName(),target,INT32_MAX,'b')));
+    getTargetVector(source,type).emplace_back(make_shared<Edge>(Edge(source->getName(),target,INT32_MAX,'r')));
 }
 
 void RoadMap::dijkstra(const string &source, const string &target , map<char,int> &stopTimes) {
@@ -184,15 +158,11 @@ void RoadMap::dijkstra(const string &source, const string &target , map<char,int
         distances.at({source,type})->first.second = 0;
     }
     ptr = distances.at({source,'b'});
-//    int stopTime = 0;
 
     while (!minHeap.empty()) {
         for (const auto &adj: getAdj(ptr)) {
-//          if(ptr->second == adj->getType()){
-//            stopTime = stopTimes.at(ptr->second);
-//          }
-            if (distances.at({adj->getDest(),ptr->second })->first.second > adj->getDuration() + ptr->first.second ) {
-                distances.at({adj->getDest(),ptr->second })->first.second  = adj->getDuration() + ptr->first.second ;
+            if (distances.at({adj->getDest(),ptr->first.second })->first.second > adj->getDuration() + ptr->first.second ) {
+                distances.at({adj->getDest(),ptr->first.second })->first.second  = adj->getDuration() + ptr->first.second ;
             }
         }
         minHeap.pop();
@@ -208,15 +178,17 @@ void RoadMap::dijkstra(const string &source, const string &target , map<char,int
 }
 
 RoadMap::vecEdge &RoadMap::getAdj(juncPtrType& ptr) {
-    return graph.at({getSource(ptr->first.first),ptr->second});
+    return getTargetVector(getSource(ptr->first.first),ptr->second);
 }
 
 //ONLY USE IF TARGET VEC EXISTS
-RoadMap::vecEdge &RoadMap::getTargetVector(const juncPtr &source) {
+RoadMap::vecEdge &RoadMap::getTargetVector(const juncPtr &source, char type) {
   for( auto& i : graph )
-    if(i.first.first->getName() == source->getName())
+    if((i.first.first->getName() == source->getName() ) && (i.first.second == type))
       return i.second;
 }
+
+
 
 
 

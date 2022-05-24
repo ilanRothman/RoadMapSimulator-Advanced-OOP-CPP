@@ -4,6 +4,7 @@
 //constructor.
 Menu::Menu(int argc, char **argv): files(argc,argv), bus(), rail(), sprinter(),
 tram(), generalMap(), commands(),stationTimes() {
+    stopTimes = {{'b',1},{'r',5},{'s',3},{'t',2}};
     config();
     mapInit();
 }
