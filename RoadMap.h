@@ -29,8 +29,7 @@ private:
     public:
         Edge(const string &source, const string &target, int duration, char type);
 
-        const string &getSource() const;
-
+        //getters and setters.
         const string &getDest() const;
 
         int getDuration() const;
@@ -64,8 +63,15 @@ public:
      **/
     bool juncExists(juncPtr const&);
 
+
+    /**
+     * creates the vertices of each vehicle type for given junction.
+     * */
     void makeVertices(juncPtr const& junc);
 
+    /**
+     * connects the edges between source and target.
+     * */
     void connectEdges(const juncPtr& source, const string& target, char& type ,map<char,int> &stopsTimes);
 
     /*

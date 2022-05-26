@@ -6,6 +6,12 @@
 #include <vector>
 using namespace std;
 
+/**
+ * The Class FileMgr will check each given file.
+ * If any of the files have Invalid inputs, it will throw an error with the appropriate message.
+ * No need for the Greatest Five, defaults are good enough.
+ * */
+
 class FileMgr{
     private:
     vector<string> files; // holds the file paths.

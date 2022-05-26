@@ -37,33 +37,33 @@ void Menu::startMenu() {
 #endif
         getline(cin,command); // getting the command from the user.
         getCommand(command, option);
-
-        switch (commands.at(option)) {
-            case 1:
-                files.LoadFile(command, source, target, duration);
-                addEdge(command,source,target,duration);
-                cout << "\nupdate was successful." << endl;
-                break;
-            case 2:
-                outBound(command);
-                break;
-            case 3:
-                inBound(command);
-                break;
-            case 4:
-                uniExpress(command);
-                break;
-            case 5:
-                multiExpress(command);
-                break;
-            case 6:
-                print();
-                break;
-            case 7:
-                onGoing = false;
-                break;
+        try{
+            switch (commands.at(option)) {
+                case 1:
+                    files.LoadFile(command, source, target, duration);
+                    addEdge(command,source,target,duration);
+                    cout << "\nupdate was successful." << endl;
+                    break;
+                case 2:
+                    outBound(command);
+                    break;
+                case 3:
+                    inBound(command);
+                    break;
+                case 4:
+                    uniExpress(command);
+                    break;
+                case 5:
+                    multiExpress(command);
+                    break;
+                case 6:
+                    print();
+                    break;
+                case 7:
+                    onGoing = false;
+                    break;
 #ifdef TEST
-            case 8:
+                    case 8:
                 for(auto i: files.loadAll())
                 {
                   duration.clear();
@@ -74,10 +74,12 @@ void Menu::startMenu() {
                 }
                 break;
 #endif
-            default:
-              cout << "unknown command";
-              break;
+                default:
+                    break;
+            }
         }
+        catch(std::out_of_range& e){cout << "unknown command";}
+
     }
 
 }
