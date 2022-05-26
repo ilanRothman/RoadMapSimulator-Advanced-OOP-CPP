@@ -2,9 +2,9 @@
 
 #include <utility>
 #include <queue>
+#define INF INT32_MAX/2
 
-RoadMap::RoadMap():graph() {
-}
+
 
 RoadMap::Edge::Edge(const string &source, const string &target, int duration, char type)
 :source(source), dest(target), duration(duration),type(type) {}
@@ -26,18 +26,6 @@ void RoadMap::addEdge(juncPtr  const &source,juncPtr const &target, int duration
     updateEdges(source,target,duration,type,stopTimes);
 }
 
-void RoadMap::printMap() const{
-  for( const auto& source : graph )
-  {
-    cout << "[ " << source.first.first->getName() << ", type : "<< source.first.second << " ]";
-
-    for ( const auto& secondPair : source.second) {
-        cout << " -> [ " << secondPair->getDest() << " : " << ( secondPair->getDuration() == INT32_MAX ? -1 : secondPair->getDuration() )
-        << ", type : " << secondPair->getType() << " ] ";
-    }
-    cout << endl;
-  }
-}
 
 juncPtr RoadMap::getSource(const string &source) const {
     for( const auto& i : graph )
@@ -62,13 +50,12 @@ const string &RoadMap::Edge::getDest() const {
     return dest;
 }
 
-const string &RoadMap::Edge::getSource() const {
-  return source;
-}
+
 
 // NOTICE - deleted parameter char type
 bool RoadMap::juncExists(juncPtr const &source) {
-
+    if(source == nullptr)
+        return false;
   for (auto const &src : graph)
     if(src.first.first->getName() == source->getName())
       return true;
@@ -124,19 +111,20 @@ void RoadMap::createEdges(const juncPtr  &source, const juncPtr  &target, map<ch
 
 void RoadMap::connectEdges(const juncPtr & source,const string& target,char& type, map<char,int> &stopTimes) {
 
-    getTargetVector(source,type).emplace_back(make_shared<Edge>(Edge(source->getName(),target,INT32_MAX,'t')));
-    getTargetVector(source,type).emplace_back(make_shared<Edge>(Edge(source->getName(),target,INT32_MAX,'s')));
-    getTargetVector(source,type).emplace_back(make_shared<Edge>(Edge(source->getName(),target,INT32_MAX,'b')));
-    getTargetVector(source,type).emplace_back(make_shared<Edge>(Edge(source->getName(),target,INT32_MAX,'r')));
+    getTargetVector(source,type).emplace_back(make_shared<Edge>(Edge(source->getName(),target,INF,'t')));
+    getTargetVector(source,type).emplace_back(make_shared<Edge>(Edge(source->getName(),target,INF,'s')));
+    getTargetVector(source,type).emplace_back(make_shared<Edge>(Edge(source->getName(),target,INF,'b')));
+    getTargetVector(source,type).emplace_back(make_shared<Edge>(Edge(source->getName(),target,INF,'r')));
 }
 
 void RoadMap::dijkstra(const string &source, const string &target , map<char,int> &stopTimes) {
 
     auto cmp = [](const juncPtrType &lhs, const juncPtrType &rhs) {
-        return lhs->second > rhs->second;
+        return lhs->first.second > rhs->first.second;
     };
 
-    int min = INT32_MAX;
+    int min = INF;
+    char lastType;
     vector<char> types = {'t','s','r','b'};
     priority_queue<juncPtrType, vector<juncPtrType >, decltype(cmp)> minHeap(cmp);
 
@@ -144,37 +132,42 @@ void RoadMap::dijkstra(const string &source, const string &target , map<char,int
     juncPtrType ptr;
 
     for (const auto& junc: graph) { // insert all junctions
-        ptr = make_shared<pair< pair<string, int>,char> >(make_pair(make_pair(junc.first.first->getName(),junc.first.second), INT32_MAX));
+        ptr = make_shared<pair< pair<string, int>,char> >(make_pair(make_pair(junc.first.first->getName(),INF),junc.first.second ));
+        if(ptr->first.first == source){
+            ptr->first.second = 0;
+        }
         minHeap.push(ptr);
-        distances.insert({ptr->first, ptr});
+        distances.insert({make_pair(junc.first.first->getName(),junc.first.second), ptr});
     }
 
     if (!juncExists(getSource(source))) {
         cout << "route unavailable\n";
         return;
     }
-
-    for(char type : types){
-        distances.at({source,type})->first.second = 0;
-    }
-    ptr = distances.at({source,'b'});
+    ptr = minHeap.top();
 
     while (!minHeap.empty()) {
+//        cout <<"source: " <<ptr->first.first << "type: "<< ptr->second << " \n" ;
         for (const auto &adj: getAdj(ptr)) {
-            if (distances.at({adj->getDest(),ptr->first.second })->first.second > adj->getDuration() + ptr->first.second ) {
-                distances.at({adj->getDest(),ptr->first.second })->first.second  = adj->getDuration() + ptr->first.second ;
+            if (distances.at({adj->getDest(),adj->getType() })->first.second > adj->getDuration() + ptr->first.second ) {
+                distances.at({adj->getDest(),adj->getType() })->first.second  = adj->getDuration() + ptr->first.second;
+
             }
+
         }
+//        cout << distances.at({ptr->first.first,ptr->second })->first.second << endl;
         minHeap.pop();
         ptr = minHeap.top();
     }
 
     for(char type : types){
-        if( min < distances.at({target,type})->first.second)
-            min = distances.at({target,type})->first.second;
-    }
+        if( min > distances.at({target,type})->first.second){
+            min = distances.at({target, type})->first.second;
+            lastType = type;
+        }
 
-    min < INT32_MAX ? cout << min << endl : cout << "route unavailable\n";
+    }
+    min < INF  ? (cout << min - stopTimes.at(lastType) << endl) : (cout << "route unavailable\n");
 }
 
 RoadMap::vecEdge &RoadMap::getAdj(juncPtrType& ptr) {
@@ -186,6 +179,7 @@ RoadMap::vecEdge &RoadMap::getTargetVector(const juncPtr &source, char type) {
   for( auto& i : graph )
     if((i.first.first->getName() == source->getName() ) && (i.first.second == type))
       return i.second;
+    return vecEdge() = {};
 }
 
 

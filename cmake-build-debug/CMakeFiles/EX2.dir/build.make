@@ -110,94 +110,24 @@ CMakeFiles/EX2.dir/FileMgr.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/EX2.dir/FileMgr.cpp.s"
 	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\iroth\CLionProjects\RoadMapSimulator\FileMgr.cpp -o CMakeFiles\EX2.dir\FileMgr.cpp.s
 
-CMakeFiles/EX2.dir/Vehicle/Vehicle.cpp.obj: CMakeFiles/EX2.dir/flags.make
-CMakeFiles/EX2.dir/Vehicle/Vehicle.cpp.obj: ../Vehicle/Vehicle.cpp
-CMakeFiles/EX2.dir/Vehicle/Vehicle.cpp.obj: CMakeFiles/EX2.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\iroth\CLionProjects\RoadMapSimulator\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/EX2.dir/Vehicle/Vehicle.cpp.obj"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/EX2.dir/Vehicle/Vehicle.cpp.obj -MF CMakeFiles\EX2.dir\Vehicle\Vehicle.cpp.obj.d -o CMakeFiles\EX2.dir\Vehicle\Vehicle.cpp.obj -c C:\Users\iroth\CLionProjects\RoadMapSimulator\Vehicle\Vehicle.cpp
+CMakeFiles/EX2.dir/Vehicle.cpp.obj: CMakeFiles/EX2.dir/flags.make
+CMakeFiles/EX2.dir/Vehicle.cpp.obj: ../Vehicle.cpp
+CMakeFiles/EX2.dir/Vehicle.cpp.obj: CMakeFiles/EX2.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\iroth\CLionProjects\RoadMapSimulator\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/EX2.dir/Vehicle.cpp.obj"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/EX2.dir/Vehicle.cpp.obj -MF CMakeFiles\EX2.dir\Vehicle.cpp.obj.d -o CMakeFiles\EX2.dir\Vehicle.cpp.obj -c C:\Users\iroth\CLionProjects\RoadMapSimulator\Vehicle.cpp
 
-CMakeFiles/EX2.dir/Vehicle/Vehicle.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/EX2.dir/Vehicle/Vehicle.cpp.i"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\iroth\CLionProjects\RoadMapSimulator\Vehicle\Vehicle.cpp > CMakeFiles\EX2.dir\Vehicle\Vehicle.cpp.i
+CMakeFiles/EX2.dir/Vehicle.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/EX2.dir/Vehicle.cpp.i"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\iroth\CLionProjects\RoadMapSimulator\Vehicle.cpp > CMakeFiles\EX2.dir\Vehicle.cpp.i
 
-CMakeFiles/EX2.dir/Vehicle/Vehicle.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/EX2.dir/Vehicle/Vehicle.cpp.s"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\iroth\CLionProjects\RoadMapSimulator\Vehicle\Vehicle.cpp -o CMakeFiles\EX2.dir\Vehicle\Vehicle.cpp.s
-
-CMakeFiles/EX2.dir/Vehicle/Sprinter.cpp.obj: CMakeFiles/EX2.dir/flags.make
-CMakeFiles/EX2.dir/Vehicle/Sprinter.cpp.obj: ../Vehicle/Sprinter.cpp
-CMakeFiles/EX2.dir/Vehicle/Sprinter.cpp.obj: CMakeFiles/EX2.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\iroth\CLionProjects\RoadMapSimulator\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/EX2.dir/Vehicle/Sprinter.cpp.obj"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/EX2.dir/Vehicle/Sprinter.cpp.obj -MF CMakeFiles\EX2.dir\Vehicle\Sprinter.cpp.obj.d -o CMakeFiles\EX2.dir\Vehicle\Sprinter.cpp.obj -c C:\Users\iroth\CLionProjects\RoadMapSimulator\Vehicle\Sprinter.cpp
-
-CMakeFiles/EX2.dir/Vehicle/Sprinter.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/EX2.dir/Vehicle/Sprinter.cpp.i"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\iroth\CLionProjects\RoadMapSimulator\Vehicle\Sprinter.cpp > CMakeFiles\EX2.dir\Vehicle\Sprinter.cpp.i
-
-CMakeFiles/EX2.dir/Vehicle/Sprinter.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/EX2.dir/Vehicle/Sprinter.cpp.s"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\iroth\CLionProjects\RoadMapSimulator\Vehicle\Sprinter.cpp -o CMakeFiles\EX2.dir\Vehicle\Sprinter.cpp.s
-
-CMakeFiles/EX2.dir/Vehicle/Tram.cpp.obj: CMakeFiles/EX2.dir/flags.make
-CMakeFiles/EX2.dir/Vehicle/Tram.cpp.obj: ../Vehicle/Tram.cpp
-CMakeFiles/EX2.dir/Vehicle/Tram.cpp.obj: CMakeFiles/EX2.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\iroth\CLionProjects\RoadMapSimulator\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/EX2.dir/Vehicle/Tram.cpp.obj"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/EX2.dir/Vehicle/Tram.cpp.obj -MF CMakeFiles\EX2.dir\Vehicle\Tram.cpp.obj.d -o CMakeFiles\EX2.dir\Vehicle\Tram.cpp.obj -c C:\Users\iroth\CLionProjects\RoadMapSimulator\Vehicle\Tram.cpp
-
-CMakeFiles/EX2.dir/Vehicle/Tram.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/EX2.dir/Vehicle/Tram.cpp.i"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\iroth\CLionProjects\RoadMapSimulator\Vehicle\Tram.cpp > CMakeFiles\EX2.dir\Vehicle\Tram.cpp.i
-
-CMakeFiles/EX2.dir/Vehicle/Tram.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/EX2.dir/Vehicle/Tram.cpp.s"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\iroth\CLionProjects\RoadMapSimulator\Vehicle\Tram.cpp -o CMakeFiles\EX2.dir\Vehicle\Tram.cpp.s
-
-CMakeFiles/EX2.dir/Vehicle/Rail.cpp.obj: CMakeFiles/EX2.dir/flags.make
-CMakeFiles/EX2.dir/Vehicle/Rail.cpp.obj: ../Vehicle/Rail.cpp
-CMakeFiles/EX2.dir/Vehicle/Rail.cpp.obj: CMakeFiles/EX2.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\iroth\CLionProjects\RoadMapSimulator\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/EX2.dir/Vehicle/Rail.cpp.obj"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/EX2.dir/Vehicle/Rail.cpp.obj -MF CMakeFiles\EX2.dir\Vehicle\Rail.cpp.obj.d -o CMakeFiles\EX2.dir\Vehicle\Rail.cpp.obj -c C:\Users\iroth\CLionProjects\RoadMapSimulator\Vehicle\Rail.cpp
-
-CMakeFiles/EX2.dir/Vehicle/Rail.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/EX2.dir/Vehicle/Rail.cpp.i"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\iroth\CLionProjects\RoadMapSimulator\Vehicle\Rail.cpp > CMakeFiles\EX2.dir\Vehicle\Rail.cpp.i
-
-CMakeFiles/EX2.dir/Vehicle/Rail.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/EX2.dir/Vehicle/Rail.cpp.s"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\iroth\CLionProjects\RoadMapSimulator\Vehicle\Rail.cpp -o CMakeFiles\EX2.dir\Vehicle\Rail.cpp.s
-
-CMakeFiles/EX2.dir/Vehicle/Bus.cpp.obj: CMakeFiles/EX2.dir/flags.make
-CMakeFiles/EX2.dir/Vehicle/Bus.cpp.obj: ../Vehicle/Bus.cpp
-CMakeFiles/EX2.dir/Vehicle/Bus.cpp.obj: CMakeFiles/EX2.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\iroth\CLionProjects\RoadMapSimulator\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/EX2.dir/Vehicle/Bus.cpp.obj"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/EX2.dir/Vehicle/Bus.cpp.obj -MF CMakeFiles\EX2.dir\Vehicle\Bus.cpp.obj.d -o CMakeFiles\EX2.dir\Vehicle\Bus.cpp.obj -c C:\Users\iroth\CLionProjects\RoadMapSimulator\Vehicle\Bus.cpp
-
-CMakeFiles/EX2.dir/Vehicle/Bus.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/EX2.dir/Vehicle/Bus.cpp.i"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\iroth\CLionProjects\RoadMapSimulator\Vehicle\Bus.cpp > CMakeFiles\EX2.dir\Vehicle\Bus.cpp.i
-
-CMakeFiles/EX2.dir/Vehicle/Bus.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/EX2.dir/Vehicle/Bus.cpp.s"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\iroth\CLionProjects\RoadMapSimulator\Vehicle\Bus.cpp -o CMakeFiles\EX2.dir\Vehicle\Bus.cpp.s
-
-CMakeFiles/EX2.dir/Junction/Junction.cpp.obj: CMakeFiles/EX2.dir/flags.make
-CMakeFiles/EX2.dir/Junction/Junction.cpp.obj: ../Junction/Junction.cpp
-CMakeFiles/EX2.dir/Junction/Junction.cpp.obj: CMakeFiles/EX2.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\iroth\CLionProjects\RoadMapSimulator\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/EX2.dir/Junction/Junction.cpp.obj"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/EX2.dir/Junction/Junction.cpp.obj -MF CMakeFiles\EX2.dir\Junction\Junction.cpp.obj.d -o CMakeFiles\EX2.dir\Junction\Junction.cpp.obj -c C:\Users\iroth\CLionProjects\RoadMapSimulator\Junction\Junction.cpp
-
-CMakeFiles/EX2.dir/Junction/Junction.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/EX2.dir/Junction/Junction.cpp.i"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\iroth\CLionProjects\RoadMapSimulator\Junction\Junction.cpp > CMakeFiles\EX2.dir\Junction\Junction.cpp.i
-
-CMakeFiles/EX2.dir/Junction/Junction.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/EX2.dir/Junction/Junction.cpp.s"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\iroth\CLionProjects\RoadMapSimulator\Junction\Junction.cpp -o CMakeFiles\EX2.dir\Junction\Junction.cpp.s
+CMakeFiles/EX2.dir/Vehicle.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/EX2.dir/Vehicle.cpp.s"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\iroth\CLionProjects\RoadMapSimulator\Vehicle.cpp -o CMakeFiles\EX2.dir\Vehicle.cpp.s
 
 CMakeFiles/EX2.dir/RoadMap.cpp.obj: CMakeFiles/EX2.dir/flags.make
 CMakeFiles/EX2.dir/RoadMap.cpp.obj: ../RoadMap.cpp
 CMakeFiles/EX2.dir/RoadMap.cpp.obj: CMakeFiles/EX2.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\iroth\CLionProjects\RoadMapSimulator\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/EX2.dir/RoadMap.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\iroth\CLionProjects\RoadMapSimulator\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/EX2.dir/RoadMap.cpp.obj"
 	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/EX2.dir/RoadMap.cpp.obj -MF CMakeFiles\EX2.dir\RoadMap.cpp.obj.d -o CMakeFiles\EX2.dir\RoadMap.cpp.obj -c C:\Users\iroth\CLionProjects\RoadMapSimulator\RoadMap.cpp
 
 CMakeFiles/EX2.dir/RoadMap.cpp.i: cmake_force
@@ -213,12 +143,7 @@ EX2_OBJECTS = \
 "CMakeFiles/EX2.dir/main.cpp.obj" \
 "CMakeFiles/EX2.dir/Menu.cpp.obj" \
 "CMakeFiles/EX2.dir/FileMgr.cpp.obj" \
-"CMakeFiles/EX2.dir/Vehicle/Vehicle.cpp.obj" \
-"CMakeFiles/EX2.dir/Vehicle/Sprinter.cpp.obj" \
-"CMakeFiles/EX2.dir/Vehicle/Tram.cpp.obj" \
-"CMakeFiles/EX2.dir/Vehicle/Rail.cpp.obj" \
-"CMakeFiles/EX2.dir/Vehicle/Bus.cpp.obj" \
-"CMakeFiles/EX2.dir/Junction/Junction.cpp.obj" \
+"CMakeFiles/EX2.dir/Vehicle.cpp.obj" \
 "CMakeFiles/EX2.dir/RoadMap.cpp.obj"
 
 # External object files for target EX2
@@ -227,18 +152,13 @@ EX2_EXTERNAL_OBJECTS =
 EX2.exe: CMakeFiles/EX2.dir/main.cpp.obj
 EX2.exe: CMakeFiles/EX2.dir/Menu.cpp.obj
 EX2.exe: CMakeFiles/EX2.dir/FileMgr.cpp.obj
-EX2.exe: CMakeFiles/EX2.dir/Vehicle/Vehicle.cpp.obj
-EX2.exe: CMakeFiles/EX2.dir/Vehicle/Sprinter.cpp.obj
-EX2.exe: CMakeFiles/EX2.dir/Vehicle/Tram.cpp.obj
-EX2.exe: CMakeFiles/EX2.dir/Vehicle/Rail.cpp.obj
-EX2.exe: CMakeFiles/EX2.dir/Vehicle/Bus.cpp.obj
-EX2.exe: CMakeFiles/EX2.dir/Junction/Junction.cpp.obj
+EX2.exe: CMakeFiles/EX2.dir/Vehicle.cpp.obj
 EX2.exe: CMakeFiles/EX2.dir/RoadMap.cpp.obj
 EX2.exe: CMakeFiles/EX2.dir/build.make
 EX2.exe: CMakeFiles/EX2.dir/linklibs.rsp
 EX2.exe: CMakeFiles/EX2.dir/objects1.rsp
 EX2.exe: CMakeFiles/EX2.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\iroth\CLionProjects\RoadMapSimulator\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Linking CXX executable EX2.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\iroth\CLionProjects\RoadMapSimulator\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable EX2.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\EX2.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

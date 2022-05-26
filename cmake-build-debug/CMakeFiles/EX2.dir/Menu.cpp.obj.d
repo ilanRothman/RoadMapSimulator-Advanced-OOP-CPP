@@ -112,9 +112,8 @@ CMakeFiles/EX2.dir/Menu.cpp.obj: \
  C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/stl_bvector.h \
  C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/vector.tcc \
  C:\Users\iroth\CLionProjects\RoadMapSimulator\RoadMap.h \
- C:\Users\iroth\CLionProjects\RoadMapSimulator\Junction/Junction.h \
- C:\Users\iroth\CLionProjects\RoadMapSimulator\Vehicle/Vehicle.h \
- C:/Users/iroth/CLionProjects/RoadMapSimulator/Junction/Junction.h \
+ C:\Users\iroth\CLionProjects\RoadMapSimulator\Junction.h \
+ C:\Users\iroth\CLionProjects\RoadMapSimulator\Vehicle.h \
  C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/map \
  C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/stl_tree.h \
  C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/ext/aligned_buffer.h \
@@ -165,11 +164,10 @@ CMakeFiles/EX2.dir/Menu.cpp.obj: \
  C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/list \
  C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/stl_list.h \
  C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/list.tcc \
- C:\Users\iroth\CLionProjects\RoadMapSimulator\Vehicle/Bus.h \
- C:\Users\iroth\CLionProjects\RoadMapSimulator\Vehicle/Vehicle.h \
- C:\Users\iroth\CLionProjects\RoadMapSimulator\Vehicle/Rail.h \
- C:\Users\iroth\CLionProjects\RoadMapSimulator\Vehicle/Sprinter.h \
- C:\Users\iroth\CLionProjects\RoadMapSimulator\Vehicle/Tram.h \
+ C:\Users\iroth\CLionProjects\RoadMapSimulator\Bus.h \
+ C:\Users\iroth\CLionProjects\RoadMapSimulator\Rail.h \
+ C:\Users\iroth\CLionProjects\RoadMapSimulator\Sprinter.h \
+ C:\Users\iroth\CLionProjects\RoadMapSimulator\Tram.h \
  C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/fstream \
  C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/codecvt.h \
  C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32/bits/basic_file.h \

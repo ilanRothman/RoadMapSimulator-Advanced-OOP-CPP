@@ -1,5 +1,5 @@
 #include "Menu.h"
-#define TEST
+//#define TEST
 
 //constructor.
 Menu::Menu(int argc, char **argv): files(argc,argv), bus(), rail(), sprinter(),
@@ -20,23 +20,22 @@ void getCommand(string& command, string& option)
 void Menu::startMenu() {
     string command,option,source,target,duration;
     bool onGoing = true;
-    while(onGoing)
-    {
+    while(onGoing) {
         cout << "\nPlease choose an option\n";
         cout << "Menu:\n";
-        cout << "load - Load an edge\n"; // adds edge - 1 -
-        cout << "outbound -  Print available targets from source\n"; // bfs from source to targets - 2 -
-        cout << "inbound -  Print available sources from target\n"; // other way around bfs - 3 -
-        cout << "uniExpress - Shortest time between target and source\n"; // dijaskra from target to source for each V - 4 -
-        cout << "multiExpress - shortest time between target and source using ALL transport\n"; // dijaskra on 5th map - 5 -
+        cout << "load - Load an edge\n";
+        cout << "outbound -  Print available targets from source\n";
+        cout << "inbound -  Print available sources from target\n";
+        cout << "uniExpress - Shortest time between target and source\n";
+        cout << "multiExpress - shortest time between target and source using ALL transport\n";
+        cout << "print - for printing all the graphs. \n";
+        cout << "EXIT - Exits the program\n";
+
 #ifdef TEST
         cout << "TEST\n"; - 7;
 
 #endif
-        cout << "EXIT - Exits the program\n\n"; // - 6 -
-
-
-        getline(cin,command);
+        getline(cin,command); // getting the command from the user.
         getCommand(command, option);
 
         switch (commands.at(option)) {
@@ -83,20 +82,15 @@ void Menu::startMenu() {
 
 }
 
-void Menu::print() const
-{
-  cout << "Bus:" << endl;
-  bus.printMap();
-  cout<< "\n\nSprinter: " <<endl;
-  sprinter.printMap();
-  cout<< "\n\nTram: " << endl;
-  tram.printMap();
-  cout<< "\n\nRail: " << endl;
-  rail.printMap();
-
-  // delete later
-  cout<< "\n\nGeneralMap: " << endl;
-  generalMap.printMap();
+void Menu::print() const {
+    cout << "Bus:" << endl;
+    bus.printMap();
+    cout << "\n\nSprinter: " << endl;
+    sprinter.printMap();
+    cout << "\n\nTram: " << endl;
+    tram.printMap();
+    cout << "\n\nRail: " << endl;
+    rail.printMap();
 }
 
 //setting default values according to config file.

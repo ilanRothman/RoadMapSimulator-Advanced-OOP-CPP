@@ -80,16 +80,16 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="C:/Users/iroth/CLionProjects/RoadMapSimulator/Bus.h">
+			<Option target="EX2"/>
+		</Unit>
 		<Unit filename="C:/Users/iroth/CLionProjects/RoadMapSimulator/FileMgr.cpp">
 			<Option target="EX2"/>
 		</Unit>
 		<Unit filename="C:/Users/iroth/CLionProjects/RoadMapSimulator/FileMgr.h">
 			<Option target="EX2"/>
 		</Unit>
-		<Unit filename="C:/Users/iroth/CLionProjects/RoadMapSimulator/Junction/Junction.cpp">
-			<Option target="EX2"/>
-		</Unit>
-		<Unit filename="C:/Users/iroth/CLionProjects/RoadMapSimulator/Junction/Junction.h">
+		<Unit filename="C:/Users/iroth/CLionProjects/RoadMapSimulator/Junction.h">
 			<Option target="EX2"/>
 		</Unit>
 		<Unit filename="C:/Users/iroth/CLionProjects/RoadMapSimulator/Menu.cpp">
@@ -98,40 +98,25 @@
 		<Unit filename="C:/Users/iroth/CLionProjects/RoadMapSimulator/Menu.h">
 			<Option target="EX2"/>
 		</Unit>
+		<Unit filename="C:/Users/iroth/CLionProjects/RoadMapSimulator/Rail.h">
+			<Option target="EX2"/>
+		</Unit>
 		<Unit filename="C:/Users/iroth/CLionProjects/RoadMapSimulator/RoadMap.cpp">
 			<Option target="EX2"/>
 		</Unit>
 		<Unit filename="C:/Users/iroth/CLionProjects/RoadMapSimulator/RoadMap.h">
 			<Option target="EX2"/>
 		</Unit>
-		<Unit filename="C:/Users/iroth/CLionProjects/RoadMapSimulator/Vehicle/Bus.cpp">
+		<Unit filename="C:/Users/iroth/CLionProjects/RoadMapSimulator/Sprinter.h">
 			<Option target="EX2"/>
 		</Unit>
-		<Unit filename="C:/Users/iroth/CLionProjects/RoadMapSimulator/Vehicle/Bus.h">
+		<Unit filename="C:/Users/iroth/CLionProjects/RoadMapSimulator/Tram.h">
 			<Option target="EX2"/>
 		</Unit>
-		<Unit filename="C:/Users/iroth/CLionProjects/RoadMapSimulator/Vehicle/Rail.cpp">
+		<Unit filename="C:/Users/iroth/CLionProjects/RoadMapSimulator/Vehicle.cpp">
 			<Option target="EX2"/>
 		</Unit>
-		<Unit filename="C:/Users/iroth/CLionProjects/RoadMapSimulator/Vehicle/Rail.h">
-			<Option target="EX2"/>
-		</Unit>
-		<Unit filename="C:/Users/iroth/CLionProjects/RoadMapSimulator/Vehicle/Sprinter.cpp">
-			<Option target="EX2"/>
-		</Unit>
-		<Unit filename="C:/Users/iroth/CLionProjects/RoadMapSimulator/Vehicle/Sprinter.h">
-			<Option target="EX2"/>
-		</Unit>
-		<Unit filename="C:/Users/iroth/CLionProjects/RoadMapSimulator/Vehicle/Tram.cpp">
-			<Option target="EX2"/>
-		</Unit>
-		<Unit filename="C:/Users/iroth/CLionProjects/RoadMapSimulator/Vehicle/Tram.h">
-			<Option target="EX2"/>
-		</Unit>
-		<Unit filename="C:/Users/iroth/CLionProjects/RoadMapSimulator/Vehicle/Vehicle.cpp">
-			<Option target="EX2"/>
-		</Unit>
-		<Unit filename="C:/Users/iroth/CLionProjects/RoadMapSimulator/Vehicle/Vehicle.h">
+		<Unit filename="C:/Users/iroth/CLionProjects/RoadMapSimulator/Vehicle.h">
 			<Option target="EX2"/>
 		</Unit>
 		<Unit filename="C:/Users/iroth/CLionProjects/RoadMapSimulator/main.cpp">

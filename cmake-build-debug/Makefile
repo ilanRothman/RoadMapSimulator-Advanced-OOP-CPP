@@ -152,30 +152,6 @@ FileMgr.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\EX2.dir\build.make CMakeFiles/EX2.dir/FileMgr.cpp.s
 .PHONY : FileMgr.cpp.s
 
-Junction/Junction.obj: Junction/Junction.cpp.obj
-.PHONY : Junction/Junction.obj
-
-# target to build an object file
-Junction/Junction.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\EX2.dir\build.make CMakeFiles/EX2.dir/Junction/Junction.cpp.obj
-.PHONY : Junction/Junction.cpp.obj
-
-Junction/Junction.i: Junction/Junction.cpp.i
-.PHONY : Junction/Junction.i
-
-# target to preprocess a source file
-Junction/Junction.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\EX2.dir\build.make CMakeFiles/EX2.dir/Junction/Junction.cpp.i
-.PHONY : Junction/Junction.cpp.i
-
-Junction/Junction.s: Junction/Junction.cpp.s
-.PHONY : Junction/Junction.s
-
-# target to generate assembly for a file
-Junction/Junction.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\EX2.dir\build.make CMakeFiles/EX2.dir/Junction/Junction.cpp.s
-.PHONY : Junction/Junction.cpp.s
-
 Menu.obj: Menu.cpp.obj
 .PHONY : Menu.obj
 
@@ -224,125 +200,29 @@ RoadMap.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\EX2.dir\build.make CMakeFiles/EX2.dir/RoadMap.cpp.s
 .PHONY : RoadMap.cpp.s
 
-Vehicle/Bus.obj: Vehicle/Bus.cpp.obj
-.PHONY : Vehicle/Bus.obj
+Vehicle.obj: Vehicle.cpp.obj
+.PHONY : Vehicle.obj
 
 # target to build an object file
-Vehicle/Bus.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\EX2.dir\build.make CMakeFiles/EX2.dir/Vehicle/Bus.cpp.obj
-.PHONY : Vehicle/Bus.cpp.obj
+Vehicle.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\EX2.dir\build.make CMakeFiles/EX2.dir/Vehicle.cpp.obj
+.PHONY : Vehicle.cpp.obj
 
-Vehicle/Bus.i: Vehicle/Bus.cpp.i
-.PHONY : Vehicle/Bus.i
-
-# target to preprocess a source file
-Vehicle/Bus.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\EX2.dir\build.make CMakeFiles/EX2.dir/Vehicle/Bus.cpp.i
-.PHONY : Vehicle/Bus.cpp.i
-
-Vehicle/Bus.s: Vehicle/Bus.cpp.s
-.PHONY : Vehicle/Bus.s
-
-# target to generate assembly for a file
-Vehicle/Bus.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\EX2.dir\build.make CMakeFiles/EX2.dir/Vehicle/Bus.cpp.s
-.PHONY : Vehicle/Bus.cpp.s
-
-Vehicle/Rail.obj: Vehicle/Rail.cpp.obj
-.PHONY : Vehicle/Rail.obj
-
-# target to build an object file
-Vehicle/Rail.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\EX2.dir\build.make CMakeFiles/EX2.dir/Vehicle/Rail.cpp.obj
-.PHONY : Vehicle/Rail.cpp.obj
-
-Vehicle/Rail.i: Vehicle/Rail.cpp.i
-.PHONY : Vehicle/Rail.i
+Vehicle.i: Vehicle.cpp.i
+.PHONY : Vehicle.i
 
 # target to preprocess a source file
-Vehicle/Rail.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\EX2.dir\build.make CMakeFiles/EX2.dir/Vehicle/Rail.cpp.i
-.PHONY : Vehicle/Rail.cpp.i
+Vehicle.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\EX2.dir\build.make CMakeFiles/EX2.dir/Vehicle.cpp.i
+.PHONY : Vehicle.cpp.i
 
-Vehicle/Rail.s: Vehicle/Rail.cpp.s
-.PHONY : Vehicle/Rail.s
-
-# target to generate assembly for a file
-Vehicle/Rail.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\EX2.dir\build.make CMakeFiles/EX2.dir/Vehicle/Rail.cpp.s
-.PHONY : Vehicle/Rail.cpp.s
-
-Vehicle/Sprinter.obj: Vehicle/Sprinter.cpp.obj
-.PHONY : Vehicle/Sprinter.obj
-
-# target to build an object file
-Vehicle/Sprinter.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\EX2.dir\build.make CMakeFiles/EX2.dir/Vehicle/Sprinter.cpp.obj
-.PHONY : Vehicle/Sprinter.cpp.obj
-
-Vehicle/Sprinter.i: Vehicle/Sprinter.cpp.i
-.PHONY : Vehicle/Sprinter.i
-
-# target to preprocess a source file
-Vehicle/Sprinter.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\EX2.dir\build.make CMakeFiles/EX2.dir/Vehicle/Sprinter.cpp.i
-.PHONY : Vehicle/Sprinter.cpp.i
-
-Vehicle/Sprinter.s: Vehicle/Sprinter.cpp.s
-.PHONY : Vehicle/Sprinter.s
+Vehicle.s: Vehicle.cpp.s
+.PHONY : Vehicle.s
 
 # target to generate assembly for a file
-Vehicle/Sprinter.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\EX2.dir\build.make CMakeFiles/EX2.dir/Vehicle/Sprinter.cpp.s
-.PHONY : Vehicle/Sprinter.cpp.s
-
-Vehicle/Tram.obj: Vehicle/Tram.cpp.obj
-.PHONY : Vehicle/Tram.obj
-
-# target to build an object file
-Vehicle/Tram.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\EX2.dir\build.make CMakeFiles/EX2.dir/Vehicle/Tram.cpp.obj
-.PHONY : Vehicle/Tram.cpp.obj
-
-Vehicle/Tram.i: Vehicle/Tram.cpp.i
-.PHONY : Vehicle/Tram.i
-
-# target to preprocess a source file
-Vehicle/Tram.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\EX2.dir\build.make CMakeFiles/EX2.dir/Vehicle/Tram.cpp.i
-.PHONY : Vehicle/Tram.cpp.i
-
-Vehicle/Tram.s: Vehicle/Tram.cpp.s
-.PHONY : Vehicle/Tram.s
-
-# target to generate assembly for a file
-Vehicle/Tram.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\EX2.dir\build.make CMakeFiles/EX2.dir/Vehicle/Tram.cpp.s
-.PHONY : Vehicle/Tram.cpp.s
-
-Vehicle/Vehicle.obj: Vehicle/Vehicle.cpp.obj
-.PHONY : Vehicle/Vehicle.obj
-
-# target to build an object file
-Vehicle/Vehicle.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\EX2.dir\build.make CMakeFiles/EX2.dir/Vehicle/Vehicle.cpp.obj
-.PHONY : Vehicle/Vehicle.cpp.obj
-
-Vehicle/Vehicle.i: Vehicle/Vehicle.cpp.i
-.PHONY : Vehicle/Vehicle.i
-
-# target to preprocess a source file
-Vehicle/Vehicle.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\EX2.dir\build.make CMakeFiles/EX2.dir/Vehicle/Vehicle.cpp.i
-.PHONY : Vehicle/Vehicle.cpp.i
-
-Vehicle/Vehicle.s: Vehicle/Vehicle.cpp.s
-.PHONY : Vehicle/Vehicle.s
-
-# target to generate assembly for a file
-Vehicle/Vehicle.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\EX2.dir\build.make CMakeFiles/EX2.dir/Vehicle/Vehicle.cpp.s
-.PHONY : Vehicle/Vehicle.cpp.s
+Vehicle.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\EX2.dir\build.make CMakeFiles/EX2.dir/Vehicle.cpp.s
+.PHONY : Vehicle.cpp.s
 
 main.obj: main.cpp.obj
 .PHONY : main.obj
@@ -380,30 +260,15 @@ help:
 	@echo ... FileMgr.obj
 	@echo ... FileMgr.i
 	@echo ... FileMgr.s
-	@echo ... Junction/Junction.obj
-	@echo ... Junction/Junction.i
-	@echo ... Junction/Junction.s
 	@echo ... Menu.obj
 	@echo ... Menu.i
 	@echo ... Menu.s
 	@echo ... RoadMap.obj
 	@echo ... RoadMap.i
 	@echo ... RoadMap.s
-	@echo ... Vehicle/Bus.obj
-	@echo ... Vehicle/Bus.i
-	@echo ... Vehicle/Bus.s
-	@echo ... Vehicle/Rail.obj
-	@echo ... Vehicle/Rail.i
-	@echo ... Vehicle/Rail.s
-	@echo ... Vehicle/Sprinter.obj
-	@echo ... Vehicle/Sprinter.i
-	@echo ... Vehicle/Sprinter.s
-	@echo ... Vehicle/Tram.obj
-	@echo ... Vehicle/Tram.i
-	@echo ... Vehicle/Tram.s
-	@echo ... Vehicle/Vehicle.obj
-	@echo ... Vehicle/Vehicle.i
-	@echo ... Vehicle/Vehicle.s
+	@echo ... Vehicle.obj
+	@echo ... Vehicle.i
+	@echo ... Vehicle.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

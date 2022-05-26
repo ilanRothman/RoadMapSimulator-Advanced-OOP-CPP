@@ -1,6 +1,3 @@
-//
-// Created by iroth on 5/11/2022.
-//
 
 #include "FileMgr.h"
 #include <fstream>
@@ -61,6 +58,7 @@ void FileMgr::checkArgs() {
     try{
         if (files.size() < 2)
             throw FileError("Need at least one argument file to start.");
+
     }
     catch (FileError&){}
 }
@@ -68,7 +66,7 @@ void FileMgr::checkArgs() {
 void FileMgr::checkJunc(string &option, string &source, string &target, string &duration) {
 
     try{
-        if (source.length() > 32 or target.length() > 32 or stoi(duration) < 0)
+        if (source.length() > 32 || target.length() > 32 || stoi(duration) < 0)
             throw FileError("Invalid File Arguments.");
 
         switch (option[0])
@@ -106,6 +104,8 @@ void FileMgr::checkJunc(string &option, string &source, string &target, string &
 #endif
     }
     catch (invalid_argument&) {
+        cerr << "Invalid Arguments.";
+        exit(1);
 #ifdef TEST
       return;
 #endif

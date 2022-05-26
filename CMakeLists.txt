@@ -4,6 +4,6 @@ project(Assignment_Two)
 set(CMAKE_CXX_STANDARD 14)
 
 add_executable(EX2 main.cpp Menu.cpp Menu.h FileMgr.cpp FileMgr.h
-        Vehicle/Vehicle.cpp Vehicle/Vehicle.h Vehicle/Sprinter.cpp Vehicle/Sprinter.h Vehicle/Tram.cpp Vehicle/Tram.h Vehicle/Rail.cpp Vehicle/Rail.h Vehicle/Bus.cpp Vehicle/Bus.h
-        Junction/Junction.cpp Junction/Junction.h
+        Vehicle.cpp Vehicle.h Sprinter.h Tram.h Rail.h Bus.h
+        Junction.h
         RoadMap.cpp RoadMap.h)
